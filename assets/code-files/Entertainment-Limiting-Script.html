@@ -1,0 +1,136 @@
+<html>
+  <head>
+    <style>
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        border: none;
+      }
+      #timer {
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: #0004;
+        color: white;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="restLeftDisplay"></h1>
+    <input id="input" />
+    <script>
+      const ms = 1;
+      const second = 1000 * ms;
+      const minute = 60 * second;
+      const hour = 60 * minute;
+
+      const FUNTIME = 50 * minute;
+      const RESTTIME = 1 * hour;
+      const WEBSITES = {
+        Youtube: "https://youtube.com",
+      };
+
+      const set = (...args) => window.localStorage.setItem(...args);
+      const get = (...args) => {
+        const item = window.localStorage.getItem(...args);
+        if (item === null) return null;
+        return parseInt(item);
+      }
+
+      function showHMS(hours, m, s) {
+        const minutes = m.toString().padStart(2, "0");
+        const seconds = s.toString().padStart(2, '0');
+        return `${hours}:${minutes}:${seconds}`;
+      }
+
+      function showTimeInterval(ms) {
+        const seconds = Math.floor(ms / 1000);
+        const minutes = Math.floor(seconds / 60);
+        const hours = Math.floor(minutes / 60);
+        return showHMS(hours, minutes % 60, seconds % 60);
+      }
+
+      function createEl(typ, parent, props) {
+        const el = document.createElement(typ);
+        Object.assign(el, props);
+        parent.appendChild(el);
+      }
+
+      function open(url) {
+        if (get("lastfun") === null || Date.now() > get("lastfun") + RESTTIME)
+          set("fun", FUNTIME);
+        if (get("fun") == null) set("fun", FUNTIME);
+        if (get("fun") <= 0) return;
+
+        document.body.innerHTML = "";
+        createEl("iframe", document.body, { src: url });
+        createEl("timer", document.body, { id: "timer" });
+
+        let funstart = new Date();
+
+        let predictedfunend = new Date(funstart.valueOf() + get("fun"));
+
+        const updateTimerDisplay = () => {
+          timer.textContent = showTimeInterval(
+            predictedfunend.valueOf() - Date.now(),
+          );
+        };
+        const handleLeave = () => {
+          if (new Date() > predictedfunend) {
+            set("fun", 0);
+            window.location.reload();
+          }
+        };
+        let gtfoInterval = setInterval(() => {
+          updateTimerDisplay();
+          handleLeave();
+        }, 1000);
+
+        document.onvisibilitychange = () => {
+          if (document.hidden) {
+            clearInterval(gtfoInterval);
+            const funend = new Date();
+            const funelapsed = funend - funstart;
+            set("fun", get("fun") - funelapsed);
+            set("lastfun", Date.now());
+          } else {
+            funstart = new Date();
+            predictedfunend = new Date(funstart.valueOf() + get("fun"));
+            gtfoInterval = setInterval(() => {
+              updateTimerDisplay();
+              handleLeave();
+            }, 1000);
+          }
+        };
+      }
+
+      function setupUrlInput() {
+        input.value = "";
+        input.onchange = () => {
+          let url = input.value;
+          if (!/^https?:/.test(url)) url = "https://" + url;
+          open(url);
+        };
+      }
+      function createLinkButton(name, url) {
+        createEl("button", document.body, {
+          textContent: name,
+          onclick: () => open(url),
+        });
+      }
+      document.body.onload = () => {
+        setupUrlInput();
+        for (const [bname, burl] of Object.entries(WEBSITES))
+          createLinkButton(bname, burl);
+        if (get("lastfun") === null) return;
+        const funRefresh = get("lastfun") + RESTTIME;
+        const refreshDate = new Date(funRefresh);
+        restLeftDisplay.textContent = `Next FUN!!! at ${showHMS(refreshDate.getHours(), refreshDate.getMinutes(), refreshDate.getSeconds())}`;
+      };
+    </script>
+  </body>
+</html>
