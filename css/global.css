@@ -57,6 +57,12 @@ td, th {
     padding-bottom: 1.1075vw;
     font-size: clamp(0.6rem,1vw,1rem);
 }
+.footer {
+  overflow:hidden;
+  background-color: black;
+  text-align:center;
+  padding-top: 1vw;
+}
 .logo {
     padding-top: 1.175vw;
     padding-bottom: 1.175vw;
@@ -117,10 +123,10 @@ figure {
     border-radius: 1.5vw;
 }
 .footnote_wrapper {
-    position: absolute;
-    bottom: 0;
+    padding-top: 30vh;
     width: 100%;
     text-align: center;
+
 }
 header {
   margin: 0;
@@ -141,9 +147,8 @@ header {
   font-style: normal;
 }
 .slide {
-    width:100vw;
     height: 30vw;
-    margin: 0 1.4vw;
+    margin: 0 50vw;
     flex-shrink: 0;
     scroll-snap-align: center;
 }

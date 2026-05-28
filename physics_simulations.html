@@ -97,15 +97,15 @@ title: Physics Simulations
         <button class="circle_button" onclick="goRight()">⮞</button>
     </div>
     <div class="carousel_nav">
-        <button class="carousel_indicator current-slide" id="navButton1" onclick="navButton1()"></button>
-        <button class="carousel_indicator" id="navButton2" onclick="navButton2()"></button>
-        <button class="carousel_indicator" id="navButton3" onclick="navButton3()"></button>
-        <button class="carousel_indicator" id="navButton4" onclick="navButton4()"></button>
-        <button class="carousel_indicator" id="navButton5" onclick="navButton5()"></button>
-        <button class="carousel_indicator" id="navButton6" onclick="navButton6()"></button>
-        <button class="carousel_indicator" id="navButton7" onclick="navButton7()"></button>
-        <button class="carousel_indicator" id="navButton8" onclick="navButton8()"></button>
-        <button class="carousel_indicator" id="navButton9" onclick="navButton9()"></button>
+        <button class="carousel_indicator current-slide" id="navButton1" onclick="navButton(1)"></button>
+        <button class="carousel_indicator" id="navButton2" onclick="navButton(2)"></button>
+        <button class="carousel_indicator" id="navButton3" onclick="navButton(3)"></button>
+        <button class="carousel_indicator" id="navButton4" onclick="navButton(4)"></button>
+        <button class="carousel_indicator" id="navButton5" onclick="navButton(5)"></button>
+        <button class="carousel_indicator" id="navButton6" onclick="navButton(6)"></button>
+        <button class="carousel_indicator" id="navButton7" onclick="navButton(7)"></button>
+        <button class="carousel_indicator" id="navButton8" onclick="navButton(8)"></button>
+        <button class="carousel_indicator" id="navButton9" onclick="navButton(9)"></button>
     </div>
 </div>
 <div class="physics_footnote_wrapper">
@@ -137,58 +137,10 @@ title: Physics Simulations
         document.getElementById("navButton" + (currentSlide).toString()).className = "carousel_indicator current-slide";
         document.getElementById("navButton" + (currentSlide+1).toString()).className = "carousel_indicator";
     }
-    function navButton1() {
-        document.querySelector(".carousel").scrollTo(0,0);
+    function navButton(n) {
+        document.querySelector(".carousel").scrollTo(n*convertVHToPixels(102.8),0);
         document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator";
-        currentSlide=1;
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator current-slide";
-    }
-    function navButton2() {
-        document.querySelector(".carousel").scrollTo(convertVHToPixels(102.8),0);
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator";
-        currentSlide=2;
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator current-slide";
-    }
-    function navButton3() {
-        document.querySelector(".carousel").scrollTo(2*convertVHToPixels(102.8),0);
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator";
-        currentSlide=3;
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator current-slide";
-    }
-    function navButton4() {
-        document.querySelector(".carousel").scrollTo(3*convertVHToPixels(102.8),0);
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator";
-        currentSlide=4;
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator current-slide";
-    }
-    function navButton5() {
-        document.querySelector(".carousel").scrollTo(4*convertVHToPixels(102.8),0);
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator";
-        currentSlide=5;
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator current-slide";
-    }
-    function navButton6() {
-        document.querySelector(".carousel").scrollTo(5*convertVHToPixels(102.8),0);
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator";
-        currentSlide=6;
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator current-slide";
-    }
-    function navButton7() {
-        document.querySelector(".carousel").scrollTo(6*convertVHToPixels(102.8),0);
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator";
-        currentSlide=7;
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator current-slide";
-    }
-    function navButton8() {
-        document.querySelector(".carousel").scrollTo(7*convertVHToPixels(102.8),0);
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator";
-        currentSlide=8;
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator current-slide";
-    }
-    function navButton9() {
-        document.querySelector(".carousel").scrollTo(8*convertVHToPixels(102.8),0);
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator";
-        currentSlide=9;
+        currentSlide=n;
         document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator current-slide";
     }
 </script>
