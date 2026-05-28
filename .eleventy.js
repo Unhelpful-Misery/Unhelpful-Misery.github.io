@@ -1,8 +1,4 @@
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
-
 module.exports = function(eleventyConfig) {
-    // Prefix links with the repository name automatically
-    eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
     eleventyConfig.addPassthroughCopy("assets/");
     eleventyConfig.addPassthroughCopy("css/");
     eleventyConfig.addWatchTarget("css/");
