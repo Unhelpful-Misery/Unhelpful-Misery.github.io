@@ -8,7 +8,6 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addWatchTarget("src/css/");
     return {
         dir: {
-            input: 'src',
             includes: '_includes',
             output: '_site',
         },
