@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npx eleventy --serve",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-ghpages": "npx @11ty/eleventy --pathprefix=/Unhelpful-Misery.github.io/",
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/Unhelpful-Misery.github.io/"
   },
   "keywords": [],
   "author": "",
