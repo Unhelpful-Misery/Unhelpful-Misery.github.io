@@ -46,14 +46,132 @@ module.exports = function(eleventyConfig) {
         return content_block;
     });
 
-    eleventyConfig.addShortcode("YouTube_carousel", function(vidIDs, titles = [""], captions = [""]) {
-        if(titles.length != vidIDS.length) { titles = new Array(vidIDS.length).fill(""); }
-        if(captions.length != vidIDS.length) { captions = new Array(vidIDS.length).fill(""); }
-        let content_block = `<div class="default_content"> <div class="component"> <button class="carousel_slide_button" onclick="goLeft()">⮜</button> <div class="carousel">`;
-        for (let i = 0; i < vidIDS.length; i++) {
-            content_block += `<div class="slide"> <figure class="carousel_figure">`;
-
+    eleventyConfig.addShortcode("YouTube_carousel", function(uniqueCarouselID, vidIDs, titles = [""], captions = [""]) {
+        if(titles.length != vidIDs.length) { titles = new Array(vidIDs.length).fill(""); }
+        if(captions.length != vidIDs.length) { captions = new Array(vidIDs.length).fill(""); }
+        if(!Array.isArray(vidIDs)) { return ''; }
+        if(vidIDs.length === 0) { return ''; }
+        console.log(titles);
+        console.log(captions);
+        //Add top content
+        let content_block = `<style>.carousel_indicator.${"current-slide"+uniqueCarouselID} { background: rgb(236, 239, 235);} </style>`
+        content_block += `<div class="carousel_surround_component">
+        <button class="carousel_slide_left_button" id="${"carousel_slide_left_button"+uniqueCarouselID}" disabled onclick="goLeft()">⮜</button>
+        <div class="carousel">
+            <div class="carousel_track-container">
+                <ul class="carousel_track" id="${"carousel_track"+uniqueCarouselID}">`;
+        //Add first carousel element
+        content_block += `<li class="carousel_slide ${"current-slide"+uniqueCarouselID}">
+                        <p class="figureCaption">${titles[0]}</p>
+                        <iframe
+                        src="https://www.youtube.com/embed/${vidIDs[0]}">
+                        </iframe>                    
+                        <p class="figure_small_caption">${captions[0]}</p>
+                    </li>`;
+        for (let i = 1; i < vidIDs.length; i++) {
+            content_block += `<li class="carousel_slide">
+                        <p class="figureCaption">${titles[i]}</p>
+                        <iframe 
+                        src="https://www.youtube.com/embed/${vidIDs[i]}">
+                        </iframe>
+                        <p class="figure_small_caption">${captions[i]}</p>
+                    </li>`;
         }
+        content_block += `</ul></div><div class="carousel_nav" id="${"carousel_nav"+uniqueCarouselID}"> <button class="carousel_indicator ${"current-slide"+uniqueCarouselID}"></button>`;
+        for (let i = 1; i < vidIDs.length; i++) {
+            content_block += `<button class="carousel_indicator"></button>`;
+        }
+        content_block += `</div></div><button class="carousel_slide_right_button" id="${"carousel_slide_right_button"+uniqueCarouselID}" onclick="goRight()">⮞</button></div>`;
+        content_block += `<script>
+        console.log("${uniqueCarouselID}");
+        /*Thank you to https://www.youtube.com/watch?v=gBzsE0oieio for providing a wonderful tutorial on how this code works! 
+        I used to have this horrendous Frankenstein monster of a JS script based on a very bad understanding of JS, and this is much cleaner. 
+        I only modified the code a little bit from what was shown in the tutorial*/
+        const ${"track"+uniqueCarouselID} = ${"carousel_track"+uniqueCarouselID};
+        const ${"slides"+uniqueCarouselID} = Array.from(${"track"+uniqueCarouselID}.children);
+        const ${"nextButton"+uniqueCarouselID} = ${"carousel_slide_right_button"+uniqueCarouselID};
+        const ${"prevButton"+uniqueCarouselID} = ${"carousel_slide_left_button"+uniqueCarouselID};
+        const ${"dotsNav"+uniqueCarouselID} = ${"carousel_nav"+uniqueCarouselID};
+        const ${"dots"+uniqueCarouselID} = Array.from(${"dotsNav"+uniqueCarouselID}.children);
+        const ${"slideWidth"+uniqueCarouselID} = ${"slides"+uniqueCarouselID}[0].getBoundingClientRect().width;
+        
+
+        //arrange the slides next to one another
+        const ${"setSlidePosition"+uniqueCarouselID} = (slide, index) => {
+            slide.style.left = ${"slideWidth"+uniqueCarouselID} * index + 'px';
+        }
+        ${"slides"+uniqueCarouselID}.forEach(${"setSlidePosition"+uniqueCarouselID});
+
+        const ${"moveToSlide"+uniqueCarouselID} = (${"track"+uniqueCarouselID}, ${"currentSlide"+uniqueCarouselID}, ${"targetSlide"+uniqueCarouselID}) => {
+            ${"track"+uniqueCarouselID}.style.transform = 'translateX(-' + ${"targetSlide"+uniqueCarouselID}.style.left + ')';
+            ${"currentSlide"+uniqueCarouselID}.classList.remove('${"current-slide"+uniqueCarouselID}');
+            ${"targetSlide"+uniqueCarouselID}.classList.add('${"current-slide"+uniqueCarouselID}');
+        }
+
+        const ${"updateDots"+uniqueCarouselID} = (${"currentDot"+uniqueCarouselID}, ${"targetDot"+uniqueCarouselID}) => { 
+            ${"currentDot"+uniqueCarouselID}.classList.remove('${"current-slide"+uniqueCarouselID}');
+            ${"targetDot"+uniqueCarouselID}.classList.add('${"current-slide"+uniqueCarouselID}');
+        }
+
+        const ${"disableAppropriateArrows"+uniqueCarouselID} = (${"targetIndex"+uniqueCarouselID}) => {
+            if (${"targetIndex"+uniqueCarouselID} === 0) {
+                ${"prevButton"+uniqueCarouselID}.disabled = true;
+                ${"nextButton"+uniqueCarouselID}.disabled = false;
+            }
+            else if (${"targetIndex"+uniqueCarouselID} === ${"slides"+uniqueCarouselID}.length-1) {
+                ${"nextButton"+uniqueCarouselID}.disabled = true;
+                ${"prevButton"+uniqueCarouselID}.disabled = false;
+            }
+            else {
+                ${"nextButton"+uniqueCarouselID}.disabled = false;
+                ${"prevButton"+uniqueCarouselID}.disabled = false;
+            }
+        }
+
+        //when I click left, move slides to the left
+        ${"prevButton"+uniqueCarouselID}.addEventListener('click', e=> {
+            const ${"currentSlide"+uniqueCarouselID} = ${"track"+uniqueCarouselID}.querySelector('.${"current-slide"+uniqueCarouselID}');
+            const ${"prevSlide"+uniqueCarouselID} = ${"currentSlide"+uniqueCarouselID}.previousElementSibling;
+            const ${"currentDot"+uniqueCarouselID} = ${"dotsNav"+uniqueCarouselID}.querySelector('.${"current-slide"+uniqueCarouselID}');
+            const ${"prevDot"+uniqueCarouselID} = ${"currentDot"+uniqueCarouselID}.previousElementSibling;
+            const ${"prevIndex"+uniqueCarouselID} = ${"slides"+uniqueCarouselID}.findIndex(slide => slide === ${"prevSlide"+uniqueCarouselID});
+
+            ${"moveToSlide"+uniqueCarouselID}(${"track"+uniqueCarouselID}, ${"currentSlide"+uniqueCarouselID}, ${"prevSlide"+uniqueCarouselID});
+            ${"updateDots"+uniqueCarouselID}(${"currentDot"+uniqueCarouselID}, ${"prevDot"+uniqueCarouselID});
+            ${"disableAppropriateArrows"+uniqueCarouselID}(${"prevIndex"+uniqueCarouselID});
+        })
+
+        //when I click right, move slides to the right
+        ${"nextButton"+uniqueCarouselID}.addEventListener('click', e=> {
+            const ${"currentSlide"+uniqueCarouselID} = ${"track"+uniqueCarouselID}.querySelector('.${"current-slide"+uniqueCarouselID}');
+            const ${"nextSlide"+uniqueCarouselID} = ${"currentSlide"+uniqueCarouselID}.nextElementSibling;
+            const ${"currentDot"+uniqueCarouselID} = ${"dotsNav"+uniqueCarouselID}.querySelector('.${"current-slide"+uniqueCarouselID}');
+            const ${"nextDot"+uniqueCarouselID} = ${"currentDot"+uniqueCarouselID}.nextElementSibling;
+            const ${"nextIndex"+uniqueCarouselID} = ${"slides"+uniqueCarouselID}.findIndex(slide => slide === ${"nextSlide"+uniqueCarouselID});
+
+            ${"moveToSlide"+uniqueCarouselID}(${"track"+uniqueCarouselID}, ${"currentSlide"+uniqueCarouselID}, ${"nextSlide"+uniqueCarouselID});
+            ${"updateDots"+uniqueCarouselID}(${"currentDot"+uniqueCarouselID}, ${"nextDot"+uniqueCarouselID});
+            ${"disableAppropriateArrows"+uniqueCarouselID}(${"nextIndex"+uniqueCarouselID});
+        })
+
+        //when I click the nav indicators, move to that slide
+        ${"dotsNav"+uniqueCarouselID}.addEventListener('click', e=> {
+            //what indicator was clicked on?
+            const ${"targetDot"+uniqueCarouselID} = e.target.closest('button');
+            
+            if (!${"targetDot"+uniqueCarouselID}) return;
+
+            const ${"currentSlide"+uniqueCarouselID} = ${"track"+uniqueCarouselID}.querySelector('.${"current-slide"+uniqueCarouselID}');
+            const ${"currentDot"+uniqueCarouselID} = ${"dotsNav"+uniqueCarouselID}.querySelector('.${"current-slide"+uniqueCarouselID}');
+            const ${"targetIndex"+uniqueCarouselID} = ${"dots"+uniqueCarouselID}.findIndex(dot => dot === ${"targetDot"+uniqueCarouselID});
+            const ${"targetSlide"+uniqueCarouselID} = ${"slides"+uniqueCarouselID}[${"targetIndex"+uniqueCarouselID}];
+
+            ${"moveToSlide"+uniqueCarouselID}(${"track"+uniqueCarouselID}, ${"currentSlide"+uniqueCarouselID}, ${"targetSlide"+uniqueCarouselID});
+            ${"updateDots"+uniqueCarouselID}(${"currentDot"+uniqueCarouselID}, ${"targetDot"+uniqueCarouselID});
+            ${"disableAppropriateArrows"+uniqueCarouselID}(${"targetIndex"+uniqueCarouselID});
+        })
+    </script>`
+        return content_block;
     });
 
     eleventyConfig.addShortcode("footnote", function(text, top_padding = "0px") {

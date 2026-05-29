@@ -119,6 +119,4 @@ iframe {
   background: black;
   cursor: pointer;
 }
-.carousel_indicator.current-slide {
-  background: rgb(236, 239, 235);
-}
+
