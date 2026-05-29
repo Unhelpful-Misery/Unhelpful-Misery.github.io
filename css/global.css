@@ -10,14 +10,16 @@ html, body {
   font-family:Helvetica;
   font-size: clamp(1rem,1vw,1.5rem);
 } 
-table {
-  border-collapse: collapse;
-  width: 50%;
-}
-td, th {
-  border: 0.11848vw solid #dddddd;
-  text-align: left;
-  padding: 0.9478vw;
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
 }
 .button {
   border: none;
@@ -103,22 +105,10 @@ figure {
     justify-content: center;
     align-items: center;
 }
-.circle_button {
-  background-color: black;
-  border: 0.2vw solid grey;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: clamp(0.7rem,2vw,1.2rem);
-  margin: 0.5vw 0.25vw;
-  flex-shrink: 0;
-  border-radius: 1vw;
-  transition-duration: 0.4s;
-}
-.circle_button:hover {
-  background-color: white;
-  color: black;
+.centered_content_with_padding {
+  align-items: center;
+  padding-left: 20vw;
+  padding-right: 20vw;
 }
 .footnote {
     padding: 0.5vw 1vw;
@@ -129,10 +119,8 @@ figure {
     border-radius: 1.5vw;
 }
 .footnote_wrapper {
-    padding-top: 40vh;
     width: 100%;
     text-align: center;
-
 }
 header {
   margin: 0;
@@ -140,58 +128,7 @@ header {
   background-color: black;
   color: white;
 }
-.physics_footnote_wrapper {
-    text-align:center;
-}
 .multiple-images {
     display: flex;
     align-items: center;
-}
-.figureCaption {
-  font-size: 1vw;
-  transform: scale(1, 1.2);
-  font-style: normal;
-}
-.slide {
-    height: 30vw;
-    margin: 0 50vw;
-    flex-shrink: 0;
-    scroll-snap-align: center;
-}
-
-.carousel {
-    display: flex;
-    margin: 0 1.4vw;
-    width: 100vw;
-    height: 30vw;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-}
-.component {
-    display: flex;
-}
-.carousel_nav {
-    display: flex;
-    justify-content: center;
-}
-.carousel_indicator {
-    border: 0.2vw solid grey;
-    border-radius: 50%;
-    width: 1vw; 
-    aspect-ratio: 1 / 1;
-    background: black;
-    margin: 0 0.2vw;
-}
-.carousel_indicator.current-slide {
-    background: rgb(236, 239, 235);
-}
-iframe {
-  top: 0;
-  left: 0;
-  width: 30vw;
-  height: 20vw;
-}
-.figure_small_caption {
-    font-size: 0.7vw;
 }

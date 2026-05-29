@@ -1,0 +1,9 @@
+table {
+  border-collapse: collapse;
+  width: 50%;
+}
+td, th {
+  border: 0.11848vw solid #dddddd;
+  text-align: left;
+  padding: 0.9478vw;
+}

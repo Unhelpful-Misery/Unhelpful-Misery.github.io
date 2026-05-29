@@ -1,146 +1,107 @@
 ---
-layout: layouts/base.html
 title: Physics Simulations
 ---
 
-<div class="top_content">
-    <h1>{{title}}</h1>
-    <h2 style="font-weight:normal;">Pendulum Simulations</h2>
-</div>
-<div class="default_content">
-    <div class="component">
-        <button class="circle_button" onclick="goLeft()">⮜</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "global-head-code.html"%}
+    <link rel="stylesheet" href="/css/carousel.css"/>
+    {% include "site-header.html" %}
+</head>
+<body>
+    <div class="top_content"> <h1>{{title}}</h1> </div>
+    <div class="default_content">
+        <h2 style="font-weight:normal;">Pendulum Simulations</h2>
+    </div>
+    <div class="carousel_surround_component">
+        <button class="carousel_slide_left_button" disabled onclick="goLeft()">⮜</button>
         <div class="carousel">
-            <div class="slide">
-                <figure class="carousel_figure">
-                    <figcaption class="figureCaption">Simplified vs. Real Pendulum</figcaption>
-                    <iframe
-                    src="https://www.youtube.com/embed/zkly9cS29Yc">
-                    </iframe>                    
-                    <figcaption class="figure_small_caption">In blue is a simplified model of a pendulum using a sinusoidal approximation.</figcaption>
-                    <figcaption class="figure_small_caption">In red is a more accurate model by computationally solving a differential equation.</figcaption>
-                </figure>
+            <div class="carousel_track-container">
+                <ul class="carousel_track">
+                    <li class="carousel_slide current-slide">
+                        <p class="figureCaption">Simplified vs. Real Pendulum</p>
+                        <iframe
+                        src="https://www.youtube.com/embed/zkly9cS29Yc">
+                        </iframe>                    
+                        <p class="figure_small_caption">In blue is a simplified model of a pendulum using a sinusoidal approximation.</p>
+                        <p class="figure_small_caption">In red is a more accurate model by computationally solving a differential equation.</p>
+                    </li>
+                    <li class="carousel_slide">
+                        <p class="figureCaption">Diverging Double Pendula</p>
+                        <iframe 
+                        src="https://www.youtube.com/embed/cRk3J8dho5Q">
+                        </iframe>
+                        <p class="figure_small_caption">The two double pendula are initially offset only by a small amount, but they quickly diverge!</p>
+                    </li>
+                    <li class="carousel_slide">
+                        <p class="figureCaption">Spring Pendulum</p>
+                        <iframe 
+                        src="https://www.youtube.com/embed/xyIQWh2VbP8">
+                        </iframe>
+                        <p class="figure_small_caption">A pendulum except with a stretching spring, rather than a stiff rod, to attach it to the pivot!</p>
+                    </li>
+                    <li class="carousel_slide">
+                        <p class="figureCaption">Double Spring Pendulum</p>
+                        <iframe 
+                        src="https://www.youtube.com/embed/oMVHKYS-a8E">
+                        </iframe>
+                        <p class="figure_small_caption">Stepping things up a bit, here's a double spring pendulum!</p>
+                    </li>
+                    <li class="carousel_slide">
+                        <p class="figureCaption">Spherical Pendulum</p>
+                        <iframe 
+                        src="https://www.youtube.com/embed/hNGEs-4FHs0">
+                        </iframe>
+                        <p class="figure_small_caption">A spherical pendulum, or a simple rigid rod pendulum in 3 dimensions instead of 2!</p>
+                    </li>
+                    <li class="carousel_slide">
+                        <p class="figureCaption">3D Double Pendula</p>
+                        <iframe 
+                        src="https://www.youtube.com/embed/pUMq4BEo6PY">
+                        </iframe>
+                        <p class="figure_small_caption">I added even more chaos to the double pendula by making them 3 dimensional!</p>
+                    </li>
+                    <li class="carousel_slide">
+                        <p class="figureCaption">3D Spring Pendulum</p>
+                        <iframe 
+                        src="https://www.youtube.com/embed/cFWBKdTUMW4">
+                        </iframe>
+                        <p class="figure_small_caption">The 3D spring pendulum is actually really pretty.</p>
+                    </li>
+                    <li class="carousel_slide">
+                        <p class="figureCaption">3D Double Spring Pendulum</p>
+                        <iframe 
+                        src="https://www.youtube.com/embed/PkuMf1wKOqc">
+                        </iframe>
+                        <p class="figure_small_caption">And, of course, what happens if we put EVERYTHING together!</p>
+                    </li>
+                    <li class="carousel_slide">
+                        <p class="figureCaption">Heart Pendulum</p>
+                        <iframe 
+                        src="https://www.youtube.com/embed/Dc5wuI1zR3o">
+                        </iframe>
+                        <p class="figure_small_caption">If you configure a double pendulum* in a very particular starting position, </br> it'll draw a heart on repeat!</p>
+                    </li>
+                </ul>
             </div>
-            <div class="slide">
-                <figure class="carousel_figure">
-                    <figcaption class="figureCaption">Diverging Double Pendula</figcaption>
-                    <iframe 
-                    src="https://www.youtube.com/embed/cRk3J8dho5Q">
-                    </iframe>
-                    <figcaption class="figure_small_caption">The two double pendula are initially offset only by a small amount, but they quickly diverge!</figcaption>
-                </figure>
-            </div>
-            <div class="slide">
-                <figure class="carousel_figure">
-                    <figcaption class="figureCaption">Spring Pendulum</figcaption>
-                    <iframe 
-                    src="https://www.youtube.com/embed/xyIQWh2VbP8">
-                    </iframe>
-                    <figcaption class="figure_small_caption">A pendulum except with a stretching spring, rather than a stiff rod, to attach it to the pivot!</figcaption>
-                </figure>
-            </div>
-            <div class="slide">
-                <figure class="carousel_figure">
-                    <figcaption class="figureCaption">Double Spring Pendulum</figcaption>
-                    <iframe 
-                    src="https://www.youtube.com/embed/oMVHKYS-a8E">
-                    </iframe>
-                    <figcaption class="figure_small_caption">Stepping things up a bit, here's a double spring pendulum!</figcaption>
-                </figure>
-            </div>
-            <div class="slide">
-                <figure class="carousel_figure">
-                    <figcaption class="figureCaption">Spherical Pendulum</figcaption>
-                    <iframe 
-                    src="https://www.youtube.com/embed/hNGEs-4FHs0">
-                    </iframe>
-                    <figcaption class="figure_small_caption">A spherical pendulum, or a simple rigid rod pendulum in 3 dimensions instead of 2!</figcaption>
-                </figure>
-            </div>
-            <div class="slide">
-                <figure class="carousel_figure">
-                    <figcaption class="figureCaption">3D Double Pendula</figcaption>
-                    <iframe 
-                    src="https://www.youtube.com/embed/pUMq4BEo6PY">
-                    </iframe>
-                    <figcaption class="figure_small_caption">I added even more chaos to the double pendula by making them 3 dimensional!</figcaption>
-                </figure>
-            </div>
-            <div class="slide">
-                <figure class="carousel_figure">
-                    <figcaption class="figureCaption">3D Spring Pendulum</figcaption>
-                    <iframe 
-                    src="https://www.youtube.com/embed/cFWBKdTUMW4">
-                    </iframe>
-                    <figcaption class="figure_small_caption">The 3D spring pendulum is actually really pretty.</figcaption>
-                </figure>
-            </div>
-            <div class="slide">
-                <figure class="carousel_figure">
-                    <figcaption class="figureCaption">3D Double Spring Pendulum</figcaption>
-                    <iframe 
-                    src="https://www.youtube.com/embed/PkuMf1wKOqc">
-                    </iframe>
-                    <figcaption class="figure_small_caption">And, of course, what happens if we put EVERYTHING together!</figcaption>
-                </figure>
-            </div>
-            <div class="slide">
-                <figure class="carousel_figure">
-                    <figcaption class="figureCaption">Heart Pendulum</figcaption>
-                    <iframe 
-                    src="https://www.youtube.com/embed/Dc5wuI1zR3o">
-                    </iframe>
-                    <figcaption class="figure_small_caption">If you configure a double pendulum* in a very particular starting position, </br> it'll draw a heart on repeat!</figcaption>
-                </figure>
+            <div class="carousel_nav">
+                <button class="carousel_indicator current-slide"></button>
+                <button class="carousel_indicator"></button>
+                <button class="carousel_indicator"></button>
+                <button class="carousel_indicator"></button>
+                <button class="carousel_indicator"></button>
+                <button class="carousel_indicator"></button>
+                <button class="carousel_indicator"></button>
+                <button class="carousel_indicator"></button>
+                <button class="carousel_indicator"></button>
             </div>
         </div>
-        <button class="circle_button" onclick="goRight()">⮞</button>
+        <button class="carousel_slide_right_button" onclick="goRight()">⮞</button>
     </div>
-    <div class="carousel_nav">
-        <button class="carousel_indicator current-slide" id="navButton1" onclick="navButton(1)"></button>
-        <button class="carousel_indicator" id="navButton2" onclick="navButton(2)"></button>
-        <button class="carousel_indicator" id="navButton3" onclick="navButton(3)"></button>
-        <button class="carousel_indicator" id="navButton4" onclick="navButton(4)"></button>
-        <button class="carousel_indicator" id="navButton5" onclick="navButton(5)"></button>
-        <button class="carousel_indicator" id="navButton6" onclick="navButton(6)"></button>
-        <button class="carousel_indicator" id="navButton7" onclick="navButton(7)"></button>
-        <button class="carousel_indicator" id="navButton8" onclick="navButton(8)"></button>
-        <button class="carousel_indicator" id="navButton9" onclick="navButton(9)"></button>
-    </div>
-</div>
-<div class="physics_footnote_wrapper">
-  <p class="footnote" >*The Heart Pendulum is one where the rods have uniformly distributed mass, rather than the balls</p>
-</div>
-<div class="right_align_content">
-    <a href="/index"><button class="button button1">Go back to Home ➤</button></a>
-</div>
-<script defer>
-    function convertVHToPixels(VH) {    
-        return VH * (document.documentElement.clientWidth / 100);
-    }
-    const dotsNav = document.querySelector('.carousel_nav');
-    const dots = Array.from(dotsNav.children);
-    let currentSlide = 1;
-    function goRight() {
-        document.querySelector(".carousel").scrollLeft += convertVHToPixels(102.8);
-        if (currentSlide != 9) {
-            currentSlide++;
-        }
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator current-slide";
-        document.getElementById("navButton" + (currentSlide-1).toString()).className = "carousel_indicator";
-    }
-    function goLeft() {
-        document.querySelector(".carousel").scrollLeft -= convertVHToPixels(102.8);
-        if (currentSlide != 1) {
-            currentSlide--;
-        }
-        document.getElementById("navButton" + (currentSlide).toString()).className = "carousel_indicator current-slide";
-        document.getElementById("navButton" + (currentSlide+1).toString()).className = "carousel_indicator";
-    }
-    function navButton(n) {
-        document.querySelector(".carousel").scrollTo(n*convertVHToPixels(102.8),0);
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator";
-        currentSlide=n;
-        document.getElementById("navButton" + currentSlide.toString()).className = "carousel_indicator current-slide";
-    }
-</script>
+    <script src="/js/carousel.js"></script>
+    {% footnote "*The Heart Pendulum is one where the rods have uniformly distributed mass, rather than the balls","3vw" %}
+    {% include "go-home-button.html"%}
+    {% include "site-footer.html" %}
+</body>
+</html>
