@@ -15,6 +15,9 @@ title: Depresso's Homepage
     if (localStorage.getItem('preferredCSSMode') === 'noCSS') {
       window.location.replace('/noCSS/home');
     }
+    else {
+      window.location.replace('/modernCSS/home');
+    }
   </script>
   {% include "global-head-code.html"%}
   {% include "site-header.html" %}
