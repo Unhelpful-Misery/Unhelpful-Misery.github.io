@@ -6,8 +6,17 @@ title: Physical Projects
 <html lang="en">
 <head>
     {% include "global-head-code.html"%}
+    <link rel="stylesheet" href="/css/global.css"/>
     <link rel="stylesheet" href="/css/table.css"/>
     {% include "site-header.html" %}
+    <script>
+    if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
+      window.location.replace('/../../lessCSS/Projects/physical_projects');
+    }
+    if (localStorage.getItem('preferredCSSMode') === 'noCSS') {
+      window.location.replace('/../../noCSS/Projects/physical_projects');
+    }
+  </script>
 </head>
 <body>
     <div class="top_content"> <h1>{{title}}</h1> </div>

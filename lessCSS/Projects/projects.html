@@ -1,0 +1,50 @@
+---
+title: Projects Homepage
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "global-head-code.html"%}
+    <link rel="stylesheet" href="/css/globalLessCSS.css"/>
+    <script>
+    if (localStorage.getItem('preferredCSSMode') === 'modernCSS') {
+      window.location.replace('/../../modernCSS/Projects/projects');
+    }
+    if (localStorage.getItem('preferredCSSMode') === 'noCSS') {
+      window.location.replace('/../../noCSS/Projects/projects');
+    }
+  </script>
+</head>
+<body>
+    <div class="top_content">
+        {% lessCSSBackButton "/../lessCSS/home", "Go back home" %}
+    </div>
+    <div class="default_content">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="default_content">
+        <p>
+            I really love making projects! I consider these to be a big part of my life.
+            It might take a lot of money and time, and I might not always take the most optimal routes, but when I start a project, I will usually finish it.
+            AND, I'll be involved in the project to such an extend that I allow myself to say that "I made that myself!"
+            If you wanna see what kind of things I do, please click any of the below buttons!
+        </p>
+        <ul>
+            <a href="/../lessCSS/Projects/robotics_projects"><li style="color:rgb(33, 86, 165)">Robotics Projects</li></a></br>
+            <a href="/../lessCSS/Projects/physical_projects"><li style="color:rgb(33, 86, 165)">Physical Projects</li></a></br>
+            <a href="/../lessCSS/Projects/physics_simulations"><li style="color:rgb(33, 86, 165)">Physics Simulations</li></a></br>
+            <a href="/../lessCSS/Projects/coding_projects"><li style="color:rgb(33, 86, 165)">Coding Projects</li></a></br>
+        </ul>
+    </div>
+    
+    <div class="default_content">
+        <p>
+            Sorry if you came to the projects page because you're trying to create a project similar to something that I've created!
+            Most of the time, I'm just so caught up working, it's hard for me to remind myself to document my process, and it's especially hard to document it in a way that's understandable for somebody who's not me.
+            However, if you're actually interested in making something similar to what I've created, please feel free to reach out at any of my contacts! 
+            I'd be super happy to help a fellow maker!
+        </p>
+    </div>
+    {% include "lessCSS-site-footer.html" %}
+</body>
+</html>

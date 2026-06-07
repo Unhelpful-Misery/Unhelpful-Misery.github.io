@@ -5,25 +5,34 @@ title: Depresso's Homepage
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    if (localStorage.getItem('preferredCSSMode') === 'modernCSS') {
+      window.location.replace('/modernCSS/home');
+    }
+    if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
+      window.location.replace('/lessCSS/home');
+    }
+    if (localStorage.getItem('preferredCSSMode') === 'noCSS') {
+      window.location.replace('/noCSS/home');
+    }
+  </script>
   {% include "global-head-code.html"%}
   {% include "site-header.html" %}
 </head>
 <body>
   <div class="top_content">
   <h1>Welcome!</h1>
-  <p>I am Depresso*, and I really like making stuff. Check out any of the buttons to see some things that I have made<sup>†</sup>!</p>  
+  <p>Check out any of the buttons to see some things that I have made*!</p>  
   </div>
   <div class="centered_content_with_padding">
-      <a href="/robotics_projects"><button class="button button1">Robotics Projects ➤</button></a>
-      <a href="/physical_projects"><button class="button button1">Physical Projects ➤</button></a>
-      <a href="/physics_simulations"><button class="button button1">Physics Simulations ➤</button></a>
-      <a href="/coding_projects"><button class="button button1">Coding Projects ➤</button></a> </br>
+      <a href="modernCSS/Projects/robotics_projects"><button class="button button1">Robotics Projects ➤</button></a>
+      <a href="modernCSS/Projects/physical_projects"><button class="button button1">Physical Projects ➤</button></a>
+      <a href="modernCSS/Projects/physics_simulations"><button class="button button1">Physics Simulations ➤</button></a>
+      <a href="modernCSS/Projects/coding_projects"><button class="button button1">Coding Projects ➤</button></a> </br>
   </div>
   <div class="default_content">
     <p>Sorry if some of these aren't very well-documented! I love making stuff, but I'm not super good with documenting my process and whatnot. If you're actually interested in how I did something, feel free to let me know at any of my contacts and I can explain it in further detail!</p>
   </div>
-  {% footnote "*Also known as Unhelpful_Misery, ExtremeNihilism, etc.","18vw" %}
-  {% footnote "<sup>†</sup>This page is not guaranteed to be fully up-to-date. Last Updated 2026-05-27" %}
   {% include "site-footer.html" %}
 </body>
 </html>

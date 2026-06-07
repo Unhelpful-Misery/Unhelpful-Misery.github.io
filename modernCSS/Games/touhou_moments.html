@@ -1,0 +1,114 @@
+---
+title: Touhou Moments
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "global-head-code.html"%}
+    <link rel="stylesheet" href="/css/global.css"/>
+    <link rel="stylesheet" href="/css/carousel.css"/>
+    <link rel="stylesheet" href="/css/sidebar.css"/>
+    {% include "site-header.html" %}
+    <script>
+    if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
+      window.location.replace('/../../lessCSS/Games/touhou_moments');
+    }
+    if (localStorage.getItem('preferredCSSMode') === 'noCSS') {
+      window.location.replace('/../../noCSS/Games/touhou_moments');
+    }
+    </script>
+</head>
+<body>
+    <div class="TOCed_content_container"> 
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#Thoughts">Thoughts</a></li>
+                    <li><a href="#Touhou7">Touhou 7</a></li>
+                    <li><a href="#Touhou8">Touhou 8</a></li>
+                    <li><a href="#Touhou10">Touhou 10</a></li>
+                    <li><a href="#Touhou13">Touhou 13</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <div> <h1>{{title}}</h1> </div>
+            <div id="Thoughts">
+                <h2>Thoughts</h2>
+            </div>
+            <p style="padding-left: 3vw">
+                I know bullet hells aren't for everybody, but I personally love the Touhou games I've played so far.
+                There's just something so amazing about that moment when you perfectly dodge and weave through an attack that you initially thought was impossible.
+                That being said, I'm still a terrible Touhou player, though.
+            </p>
+            <div id="Touhou7">
+                <h2>Touhou 7: Perfect Cherry Blossom</h2>
+            </div>
+            <p style="padding-left: 3vw">
+                I personally believe that PCB is the best beginner Touhou game, excluding how difficult it is to actually obtain the game.
+                Maybe I'm just saying that because it was the first Touhou game I played, though. In any case, even though it's really easy, PCB's also really fun and the attack patterns are super pretty.
+                I think PCB has a special place in a lot of people's hearts and it definitely has a special place in mine.
+            </p>
+            {% YouTube_carousel 
+                "Touhou7",
+                ["l_zX_NDP2sg", "18ElG7OKDys", "tZmuwe5QsRI", "2SfLV988k9k", "5_RtzVd1G7k", "KhWp_u4O6QI", "ndkQmQBxjH8"],
+                [""],
+                ["Marisa might not be the optimal character to play, but I just love her MASTER SPARK!!", "", "", "", "", "" ,"I really did not expect to beat the Extra Stage on this run, to be completely honest."],
+                "10vw"
+            %}
+            <div id="Touhou8">
+                <h2>Touhou 8: Imperishable Night</h2>
+            </div>
+            <p style="padding-left: 3vw">
+                I'll be honest, I never really understood the "Time" mechanic really well - sometimes I think I got a lot of score points and it advances by a full hour, and other times I think I did horribly and the time only advances 30 minutes. 
+                Anyway, I've learned to mostly ignore the time when playing my runs, since I don't use continues anyway. 
+                The best part about Imperishable Night has got to be the fight against Marisa. There's something so awesome about having to dodge Master Spark.
+                Although, I will say, all of the boss fights are made significantly easier when you have, like, 2 business days to death bomb if you're playing as Reimu.
+            </p>
+            {% YouTube_carousel 
+                "Touhou8",
+                ["9szYPIlGFiM","J2quDtqOCb8", "7xw3rxxHUhQ", "n6X9mMTy_a8", "ndLN1UyiU38", "pYYXSB_ps4k", "P0nRtbQ1Zm0"],
+                ["Short clip","","","","","",""],
+                ["Goodness, this has got to be one of the most frustrating Touhou moments. </br> (I still haven't beaten that last spell, by the way. The curving bullets always get me)","Beating the game isn't so hard when you can get hit, go make a cup of coffee, and come back to press the death bomb button!", "I love the idea of planting a bomb in the enemy's face while they're dialoguing", "", "", "", ""],
+                "10vw"
+            %}
+            <div id="Touhou10">
+                <h2>Touhou 10: Mountain of Faith</h2>
+            </div>
+            <p style="padding-left: 3vw">
+                It took a WHILE to get adjusted to the fact that bombing meant my power went down, but I slowly started to realise how generous Touhou 10 is with giving you power items.
+                Kanako seems really difficult at first, but once you start understanding her attacks, they become actually pretty fun. (except for her last one). 
+            </p>
+            {% YouTube_carousel 
+                "Touhou10",
+                ["_V6ewgSmz4A", "C4t3frvk734"],
+                [""],
+                ["","Once again, a character that can just put a bomb right in the enemy's face. That'll never get old."],
+                "10vw"
+            %}
+            <div id="Touhou13">
+                <h2>Touhou 13: Ten Desires</h2>
+            </div>
+            <p style="padding-left: 3vw">
+                Ten Desires was interesting to play through. 
+                I really liked the music during some sections and the attacks were generally really pretty too.
+                Overall, though, I feel like Ten Desires was just another game in the series, and wasn't really too standout?
+                Maybe that's just because the main gimmick wasn't really that interesting, although PCB's gimmick isn't really that interesting either. </br> </br>
+                I will say, however, Youmu's attack is *really* fun to wield. 
+            </p>
+            {% YouTube_carousel 
+                "Touhou13",
+                ["xn0a-MY9v9w","DyCPFeTU8Oc","dyvmiEKJTtY", "UuIddOMGxvU "],
+                [""],
+                ["Compared to all of the attacks I've seen so far, Youmu's attack is so interesting. It has to be the coolest thus far.","","","No, I will not shut up about how cool Youmu's attack is."],
+                "10vw"
+            %}
+            </br>
+            </br>
+            {% include "go-home-button.html"%}
+        </main>
+    </div>
+    {% include "site-footer.html" %}
+</body>
+</html>

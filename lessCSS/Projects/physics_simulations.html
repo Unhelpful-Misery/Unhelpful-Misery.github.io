@@ -1,0 +1,69 @@
+---
+title: Physics Simulations
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "global-head-code.html"%}
+    <link rel="stylesheet" href="/css/globalLessCSS.css"/>
+    <link rel="stylesheet" href="/css/carousel.css"/>
+    <link rel="stylesheet" href="/css/sidebarLessCSS.css"/>
+    <script>
+    if (localStorage.getItem('preferredCSSMode') === 'modernCSS') {
+      window.location.replace('/../../modernCSS/Projects/physics_simulations');
+    }
+    if (localStorage.getItem('preferredCSSMode') === 'noCSS') {
+      window.location.replace('/../../noCSS/Projects/physics_simulations');
+    }
+  </script>
+</head>
+<body>
+    <div class="TOCed_content_container"> 
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#Pendulum Simulations">Pendulums</a></li>
+                    <li style="padding-left: 1vw;"><a href="#Simplified vs. Real Pendulum" style="font-size: clamp(8px,1.2vw,18px)">2D Rod</a></li>
+                    <li style="padding-left: 1vw;"><a href="#Diverging Double Pendula" style="font-size: clamp(8px,1.2vw,18px)">2D Double Rod</a></li>
+                    <li style="padding-left: 1vw;"><a href="#Spring Pendulum" style="font-size: clamp(8px,1.2vw,18px)">2D Spring</a></li>
+                    <li style="padding-left: 1vw;"><a href="#Double Spring Pendulum" style="font-size: clamp(8px,1.2vw,18px)">2D Double Sping</a></li>
+                    <li style="padding-left: 1vw;"><a href="#Spherical Pendulum" style="font-size: clamp(8px,1.2vw,18px)">3D Rod</a></li>
+                    <li style="padding-left: 1vw;"><a href="#3D Double Pendula" style="font-size: clamp(8px,1.2vw,18px)">3D Double Rod</a></li>
+                    <li style="padding-left: 1vw;"><a href="#3D Spring Pendulum" style="font-size: clamp(8px,1.2vw,18px)">3D Spring</a></li>
+                    <li style="padding-left: 1vw;"><a href="#3D Double Spring Pendulum" style="font-size: clamp(8px,1.2vw,18px)">3D Double Spring</a></li>
+                    <li style="padding-left: 1vw;"><a href="#Heart Pendulum" style="font-size: clamp(8px,1.2vw,18px)">Heart</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content"> 
+        <div class="top_content">
+            {% lessCSSBackButton "/../lessCSS/Projects/projects", "Go back to Projects Homepage" %}
+        </div>
+        <div class="default_content">
+            <h1>{{title}}</h1> 
+            <h2 style="font-weight:normal;" id="Pendulum Simulations">Pendulum Simulations</h2>
+        </div>
+        {% YouTube_carousel_lessCSS
+            ["zkly9cS29Yc","cRk3J8dho5Q","xyIQWh2VbP8","oMVHKYS-a8E","hNGEs-4FHs0","pUMq4BEo6PY","cFWBKdTUMW4","PkuMf1wKOqc","Dc5wuI1zR3o"],
+            ["Simplified vs. Real Pendulum", "Diverging Double Pendula", "Spring Pendulum", "Double Spring Pendulum", 
+            "Spherical Pendulum", "3D Double Pendula", "3D Spring Pendulum", "3D Double Spring Pendulum", "Heart Pendulum"], 
+            ["In blue is a simplified model of a pendulum using a sinusoidal approximation. </br> In red is a more accurate model by computationally solving a differential equation.", 
+            "The two double pendula are initially offset only by a small amount, but they quickly diverge!", 
+            "A pendulum except with a stretching spring, rather than a stiff rod, to attach it to the pivot!", 
+            "Stepping things up a bit, here's a double spring pendulum!", 
+            "A spherical pendulum, or a simple rigid rod pendulum in 3 dimensions instead of 2!", 
+            "I added even more chaos to the double pendula by making them 3 dimensional!", 
+            "The 3D spring pendulum is actually really pretty.", 
+            "And, of course, what happens if we put EVERYTHING together!",
+            "If you configure a double pendulum* in a very particular starting position, </br> it'll draw a heart on repeat!"] 
+        %}
+        {% include "lessCSS-site-footer.html" %}
+        <div class="default_content">
+            <hr>
+            <p>*The Heart Pendulum is one where the rods have uniformly distributed mass, rather than the balls</p>
+        </div>
+        </main>
+    </div>
+</body>
+</html>

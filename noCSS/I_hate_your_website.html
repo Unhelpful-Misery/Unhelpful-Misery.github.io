@@ -1,0 +1,46 @@
+---
+title: I hate your website
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "global-head-code.html"%}
+  <script>
+    if (localStorage.getItem('preferredCSSMode') === 'modernCSS') {
+      window.location.replace('/../../modernCSS/I_hate_your_website');
+    }
+    if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
+      window.location.replace('/../../lessCSS/I_hate_your_website');
+    }
+  </script>
+</head>
+<body>
+  <a href="/../noCSS/home"><p>Go back to Home</p></a>
+  <h1>Want a change of scenery?</h1>
+  <p>
+    Did you make mistake, and thought that you could handle a website with absolutely no fanciness?
+    Perhaps you were just testing around to see what the different website versions looked like, and realised that you prefer the default?
+    Just press the underlined text below!
+  </p>
+  <p id="modernCSSButton"><u>Click me for Modern CSS!!</u></p>
+  <p>
+    Or maybe you don't like having absolutely no fanciness, but you felt like the default website was far too bloated.
+    In that case, having a website that's middle of the road in terms of fanciness is probably right for you!
+  </p>  
+  <p id="lessCSSButton"><u>Click me for less modern CSS!!</u></p>
+  <script defer>
+    const modernCSSButton = document.getElementById('modernCSSButton');
+    const noCSSButton = document.getElementById('lessCSSButton');
+    modernCSSButton.addEventListener("click", () => {
+      localStorage.setItem('preferredCSSMode', 'modernCSS');
+      window.location.replace('/../../modernCSS/I_hate_your_website');
+    })
+    noCSSButton.addEventListener("click", () => {
+      //Redirect user to the no CSS version of this website. 
+      localStorage.setItem('preferredCSSMode', 'lessCSS');
+      window.location.replace('/../../lessCSS/I_hate_your_website');
+    })
+  </script>
+</body>
+</html>

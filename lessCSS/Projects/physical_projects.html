@@ -1,0 +1,30 @@
+---
+title: Physical Projects
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "global-head-code.html"%}
+    <link rel="stylesheet" href="/css/globalLessCSS.css"/>
+    <link rel="stylesheet" href="/css/table.css"/>
+    <script>
+    if (localStorage.getItem('preferredCSSMode') === 'modernCSS') {
+      window.location.replace('/../../modernCSS/Projects/physical_projects');
+    }
+    if (localStorage.getItem('preferredCSSMode') === 'noCSS') {
+      window.location.replace('/../../noCSS/Projects/physical_projects');
+    }
+  </script>
+</head>
+<body>
+    <div class="top_content">
+        {% lessCSSBackButton "/../lessCSS/Projects/projects", "Go back to Projects Homepage" %}
+    </div>
+    <div class="top_content"> <h1>{{title}}</h1> </div>
+    {% include "physical_projects/musket.html"%}
+    {% include "physical_projects/wings.html" %}
+    {% include "go-home-button.html"%}
+    {% include "lessCSS-site-footer.html" %}
+</body>
+</html>

@@ -1,0 +1,64 @@
+---
+title: I hate your website
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "global-head-code.html"%}
+  <link rel="stylesheet" href="/css/globalLessCSS.css"/>
+  <script>
+    if (localStorage.getItem('preferredCSSMode') === 'modernCSS') {
+      window.location.replace('/../../modernCSS/I_hate_your_website');
+    }
+    if (localStorage.getItem('preferredCSSMode') === 'noCSS') {
+      window.location.replace('/../../noCSS/I_hate_your_website');
+    }
+  </script>
+</head>
+<body>
+  <div class="top_content">
+    {% lessCSSBackButton "/../lessCSS/home", "Go back home" %}
+  </div>
+  <div class="top_content">
+    <h1>Want a change of scenery?</h1>
+  </div>
+  <div class="default_content">
+    <p>
+      Have you tried out this kind of website design and want to go back to that modern style?
+      Perhaps it is just simply more easy to navigate with all of that fanciness - no shame in that!
+      Just click below to be transported to the fancier version of this website! 
+      (Your choice will be remembered!)
+    </p>  
+    <ul>
+      <li class="clickableText" style="color:rgb(33, 86, 165)"" id="modernCSSButton"><u>Modern CSS</u></li></br>
+    </ul>
+  </div>
+  <div class="default_content">
+    <p>
+      Or maybe you're shouting at me right now: saying "You don't know what simple means!" 
+      You may think that even the "Less CSS" website is still too much - we have to commit to this decision to reduce fanciness.
+      Or, maybe you're not a human at all, and you're a machine looking for an easier time collecting data.
+      If any of that sounds familiar, you can click the button below to see what the site looks like with incredibly minimal fanciness!
+      And don't worry - if you come back, this website will remember your preferences!
+    </p>
+    <ul>
+      <li class="clickableText" style="color:rgb(33, 86, 165)" id="noCSSButton"><u>No CSS</u></li></br>
+    </ul>  
+  </div>
+  {% include "lessCSS-site-footer.html" %}
+  <script defer>
+    const modernCSSButton = document.getElementById('modernCSSButton');
+    const noCSSButton = document.getElementById('noCSSButton');
+    modernCSSButton.addEventListener("click", () => {
+      localStorage.setItem('preferredCSSMode', 'modernCSS');
+      window.location.replace('/../../modernCSS/I_hate_your_website');
+    })
+    noCSSButton.addEventListener("click", () => {
+      //Redirect user to the no CSS version of this website. 
+      localStorage.setItem('preferredCSSMode', 'noCSS');
+      window.location.replace('/../../noCSS/I_hate_your_website');
+    })
+  </script>
+</body>
+</html>

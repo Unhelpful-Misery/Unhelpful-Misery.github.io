@@ -6,8 +6,17 @@ title: Physics Simulations
 <html lang="en">
 <head>
     {% include "global-head-code.html"%}
+    <link rel="stylesheet" href="/css/global.css"/>
     <link rel="stylesheet" href="/css/carousel.css"/>
     {% include "site-header.html" %}
+    <script>
+    if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
+      window.location.replace('/../../lessCSS/Projects/physics_simulations');
+    }
+    if (localStorage.getItem('preferredCSSMode') === 'noCSS') {
+      window.location.replace('/../../noCSS/Projects/physics_simulations');
+    }
+  </script>
 </head>
 <body>
     <div class="top_content"> <h1>{{title}}</h1> </div>
@@ -27,7 +36,8 @@ title: Physics Simulations
         "I added even more chaos to the double pendula by making them 3 dimensional!", 
         "The 3D spring pendulum is actually really pretty.", 
         "And, of course, what happens if we put EVERYTHING together!",
-        "If you configure a double pendulum* in a very particular starting position, </br> it'll draw a heart on repeat!"]
+        "If you configure a double pendulum* in a very particular starting position, </br> it'll draw a heart on repeat!"],
+        "20vw"
     %}
     {% footnote "*The Heart Pendulum is one where the rods have uniformly distributed mass, rather than the balls","3vw" %}
     {% include "go-home-button.html"%}

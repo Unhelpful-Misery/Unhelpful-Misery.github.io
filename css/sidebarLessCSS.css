@@ -1,0 +1,33 @@
+.TOCed_content_container {
+  display: flex;
+}
+.sidebar {
+  width: 11vw;
+  height: 100vh;
+  background-color: rgb(40, 40, 40);
+  padding-left: 2vw;
+  position: sticky;
+  top: 0;
+}
+.sidebar a {
+  padding: 0 0;
+  text-decoration: none;
+  font-size: clamp(10px, 1.5vw,25px);
+  color: white;
+  display: block;
+}
+.sidebar a:hover {
+  color: rgb(255, 225, 185);
+}
+.content {
+  flex: 1; 
+  padding: 20px;
+}
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}

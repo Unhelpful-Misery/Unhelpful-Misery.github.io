@@ -1,0 +1,45 @@
+---
+title: Depresso's Homepage
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include "global-head-code.html"%}
+  <link rel="stylesheet" href="/css/globalLessCSS.css"/>
+  <script>
+    if (localStorage.getItem('preferredCSSMode') === 'modernCSS') {
+      window.location.replace('/../../modernCSS/home');
+    }
+    if (localStorage.getItem('preferredCSSMode') === 'noCSS') {
+      window.location.replace('/../../noCSS/home');
+    }
+  </script>
+</head>
+<body style="color:white">
+  <div class="top_content">
+    <h1 style="color:rgb(186,57,37)">Welcome!</h1>
+    <p style="color:rgb(51,51,51)">I highly recommend you start off by checking out some of the projects I've made!
+    Just click any of the links below!</p>  
+    <ul>
+      <a href="/../lessCSS/Projects/projects"><li style="color:rgb(33, 86, 165)">Projects Homepage</li></a></br>
+      <a href="/../lessCSS/Projects/robotics_projects"><li style="color:rgb(33, 86, 165)">Robotics Projects</li></a></br>
+      <a href="/../lessCSS/Projects/physical_projects"><li style="color:rgb(33, 86, 165)">Physical Projects</li></a></br>
+      <a href="/../lessCSS/Projects/physics_simulations"><li style="color:rgb(33, 86, 165)">Physics Simulations</li></a></br>
+      <a href="/../lessCSS/Projects/coding_projects"><li style="color:rgb(33, 86, 165)">Coding Projects</li></a></br>
+    </ul>
+  </div>
+  <div class="default_content">
+    <p style="color:rgb(51,51,51)">Once you finished up looking at my projects, and you're actually interested in learning more about me as a person, feel free to see my <a href="/../lessCSS/about_depresso" style="color:rgb(33, 86, 165)">about page</a>, if you would like.</p>
+    <p style="color:rgb(51,51,51)">Or maybe you've been avoiding anything on this website because you hate the look of it?
+    Luckily, I've prepared a contingency plan in the case that you hate my website!
+    If you want to get a more modern feel for the website, or alternatively, make the website even more simplistic, navigate to <a href="/../lessCSS/I_hate_your_website" style="color:rgb(33, 86, 165)">"I hate your website"</a>  and choose the look you prefer!</p>
+  </div>
+  {% include "lessCSS-site-footer.html" %}
+  <div style="padding-bottom:10vw"></div>
+  <div class="default_content">
+    <hr>
+    <p>*This page is not guaranteed to be fully up-to-date. Last Updated 2026-06-05 </p>
+  </div>
+</body>
+</html>

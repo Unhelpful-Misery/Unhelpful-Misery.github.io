@@ -1,0 +1,24 @@
+---
+title: Physical Projects
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "global-head-code.html"%}
+    <script>
+    if (localStorage.getItem('preferredCSSMode') === 'modernCSS') {
+      window.location.replace('/../../modernCSS/Projects/physical_projects');
+    }
+    if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
+      window.location.replace('/../../lessCSS/Projects/physical_projects');
+    }
+  </script>
+</head>
+<body>
+    <a href="/../noCSS/Projects/projects"><p>Go back to Projects Homepage</p></a>
+    <h1>{{title}}</h1>
+    {% include "physical_projects/musket_noCSS.html"%}
+    {% include "physical_projects/wings_noCSS.html" %}
+</body>
+</html>

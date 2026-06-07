@@ -46,17 +46,15 @@ module.exports = function(eleventyConfig) {
         return content_block;
     });
 
-    eleventyConfig.addShortcode("YouTube_carousel", function(uniqueCarouselID, vidIDs, titles = [""], captions = [""]) {
+    eleventyConfig.addShortcode("YouTube_carousel", function(uniqueCarouselID, vidIDs, titles = [""], captions = [""], button_space="20vw") {
         if(titles.length != vidIDs.length) { titles = new Array(vidIDs.length).fill(""); }
         if(captions.length != vidIDs.length) { captions = new Array(vidIDs.length).fill(""); }
         if(!Array.isArray(vidIDs)) { return ''; }
         if(vidIDs.length === 0) { return ''; }
-        console.log(titles);
-        console.log(captions);
         //Add top content
         let content_block = `<style>.carousel_indicator.${"current-slide"+uniqueCarouselID} { background: rgb(236, 239, 235);} </style>`
         content_block += `<div class="carousel_surround_component">
-        <button class="carousel_slide_left_button" id="${"carousel_slide_left_button"+uniqueCarouselID}" disabled onclick="goLeft()">⮜</button>
+        <button class="carousel_slide_left_button" id="${"carousel_slide_left_button"+uniqueCarouselID}" disabled style="left:${button_space};">⮜</button>
         <div class="carousel">
             <div class="carousel_track-container">
                 <ul class="carousel_track" id="${"carousel_track"+uniqueCarouselID}">`;
@@ -81,7 +79,7 @@ module.exports = function(eleventyConfig) {
         for (let i = 1; i < vidIDs.length; i++) {
             content_block += `<button class="carousel_indicator"></button>`;
         }
-        content_block += `</div></div><button class="carousel_slide_right_button" id="${"carousel_slide_right_button"+uniqueCarouselID}" onclick="goRight()">⮞</button></div>`;
+        content_block += `</div></div><button class="carousel_slide_right_button" id="${"carousel_slide_right_button"+uniqueCarouselID}" style="right:${button_space};"">⮞</button></div>`;
         content_block += `<script>
         console.log("${uniqueCarouselID}");
         /*Thank you to https://www.youtube.com/watch?v=gBzsE0oieio for providing a wonderful tutorial on how this code works! 
@@ -174,12 +172,39 @@ module.exports = function(eleventyConfig) {
         return content_block;
     });
 
+    eleventyConfig.addShortcode("YouTube_carousel_lessCSS", function(vidIDs, titles=[""],captions=[""]) {
+        if(titles.length != vidIDs.length) { titles = new Array(vidIDs.length).fill(""); }
+        if(captions.length != vidIDs.length) { captions = new Array(vidIDs.length).fill(""); }
+        if(!Array.isArray(vidIDs)) { return ''; }
+        if(vidIDs.length === 0) { return ''; }
+        let content_block = "";
+        for (let i = 0; i < vidIDs.length; i++) {
+            content_block += `<div class=""centered_content>
+                <p class="figureCaption" id="${titles[i]}">${titles[i]}</p></br>
+            </div>
+            <div class="centered_content">
+                <iframe style="width: 50vw; height: 29vw"
+                src="https://www.youtube.com/embed/${vidIDs[i]}">
+                </iframe>
+            </div>
+            <div class=""centered_content>
+                <p class="figure_small_caption">${captions[i]}</p></br>
+            </div>`;
+        }
+        return content_block;
+    });
+
     eleventyConfig.addShortcode("footnote", function(text, top_padding = "0px") {
         return `<div class="footnote_wrapper" style="padding-top: ${top_padding}">
         <p class="footnote">${text}</p>
         </div>`
     });
 
+    eleventyConfig.addShortcode("lessCSSBackButton", function(link, text="Go Back") {
+        return `<hr>
+        <p><a href="${link}" style="color:rgb(33, 86, 165)">← ${text}</p></a>
+        <hr>`
+    });
     return {
         dir: {
             includes: '_includes',
