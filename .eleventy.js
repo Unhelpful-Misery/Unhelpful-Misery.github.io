@@ -81,7 +81,6 @@ module.exports = function(eleventyConfig) {
         }
         content_block += `</div></div><button class="carousel_slide_right_button" id="${"carousel_slide_right_button"+uniqueCarouselID}" style="right:${button_space};"">⮞</button></div>`;
         content_block += `<script>
-        console.log("${uniqueCarouselID}");
         /*Thank you to https://www.youtube.com/watch?v=gBzsE0oieio for providing a wonderful tutorial on how this code works! 
         I used to have this horrendous Frankenstein monster of a JS script based on a very bad understanding of JS, and this is much cleaner. 
         I only modified the code a little bit from what was shown in the tutorial*/
