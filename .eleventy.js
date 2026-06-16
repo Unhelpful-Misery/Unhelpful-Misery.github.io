@@ -9,11 +9,11 @@ module.exports = function(eleventyConfig) {
         if(!Array.isArray(names)) { return ''; }
         if(!Array.isArray(files)) { return ''; }
         let content_blocks = "";
+        content_blocks += `<div class="centered_content"> \n`;
         for (let i = 0; i < names.length; i++) {
-            content_blocks += `<div class="centered_content"> \n`;
-            content_blocks += `<p><u>${names[i]}</u></p> <a href="${files[i]}" download="${names[i]}"><button class="button button1">Download</button></a> \n`;
-            content_blocks += `</div> \n`;
+            content_blocks += `<a href="${files[i]}" download="${names[i]}"><button class="button button1">Download ${names[i]}</button></a> \n`;
         }
+        content_blocks += `</div> \n`;
         return content_blocks;
     });
 
