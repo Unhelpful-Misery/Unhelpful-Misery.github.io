@@ -364,3 +364,22 @@ def main_body_function(userInput, dispAll,numberToDisplay):
             returnString += format_return_value_as_string(get_top_value(returnValues),len(numerator))
             numberDisplayed += 1
     return returnString
+
+while (True):
+    userInput = ""
+    if (not displayAll):
+        userInput = input("Enter a number followed by SI units. (Type \"Display all\" to change the settings to display all results): ")
+    else:
+        userInput = input("Enter a number followed by SI units. (Type \"Display some\" to change the settings to display only the top 10 results): ")
+    
+    print()
+    if (userInput.casefold() == "display all"):
+        displayAll = True
+        print("Now displaying all available answers\n")
+    elif (userInput.casefold() == "display some"):
+        displayAll = False
+        print("Now displaying only the top 10 answers\n")
+    elif (userInput.casefold() == "quit"):
+        break
+    else: 
+        print(main_body_function(userInput,displayAll,10))
