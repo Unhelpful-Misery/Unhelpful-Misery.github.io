@@ -4,6 +4,8 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addWatchTarget("css/");
     eleventyConfig.addPassthroughCopy("js/");
     eleventyConfig.addWatchTarget("js/");
+    eleventyConfig.addPassthroughCopy("assets/code-files/american-units/Units - Sheet1.csv"); 
+    eleventyConfig.addWatchTarget("assets/code-files/american-units/Units - Sheet1.csv");
 
     eleventyConfig.addShortcode("downloadables", function(names,files) {
         if(!Array.isArray(names)) { return ''; }
