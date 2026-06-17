@@ -364,9 +364,3 @@ def main_body_function(userInput, dispAll,numberToDisplay):
             returnString += format_return_value_as_string(get_top_value(returnValues),len(numerator))
             numberDisplayed += 1
     return returnString
-
-userInput = sys.argv[1]
-displayAll = sys.arcv[2]
-n = sys.arcv[3]
-print("\n" + main_body_function(userInput,displayAll,n))
-sys.stdout.flush()
