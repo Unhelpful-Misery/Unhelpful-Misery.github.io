@@ -243,7 +243,7 @@ def separate_identified_units_into_list_and_prefixList(list, prefixList):
                         list[k] = unit[0]
                         unitIsSupported = True
         if (not unitIsSupported):
-            return word
+            return "ERROR: The inputted unit " + str(word) + " is not supported by the program\\n"
     return ''
 
 def convert_supported_units(number, list, operation):
@@ -336,8 +336,6 @@ def format_return_value_as_string(list, denominatorStartPoint):
         returnString += list[1][i]
     if (len(list[1])-denominatorStartPoint)>1:
         returnString += ")"
-    if (denominatorStartPoint == len(list[1])):
-        returnString += ")"
     returnString += "\\n"
     return returnString
 
@@ -365,10 +363,10 @@ def main_body_function(userInput, dispAll,numberToDisplay):
 
     unidentifiedUnit = separate_identified_units_into_list_and_prefixList(numerator,numeratorPrefixes)
     if (unidentifiedUnit != ''):
-        return "ERROR: The inputted unit \"" + unidentifiedUnit + "\" is not supported by the program\\n"
+        return unidentifiedUnit
     unidentifiedUnit = separate_identified_units_into_list_and_prefixList(denominator,denominatorPrefixes)
     if (unidentifiedUnit != ''):
-        return "ERROR: The inputted unit \"" + unidentifiedUnit + "\" is not supported by the program\\n"
+        return unidentifiedUnit
     
     userInputNumber = convert_supported_units(userInputNumber,numerator,'multiply')
     userInputNumber = convert_supported_units(userInputNumber,denominator,'divide')
