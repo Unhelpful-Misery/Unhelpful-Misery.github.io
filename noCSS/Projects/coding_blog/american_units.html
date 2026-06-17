@@ -6,42 +6,32 @@ title: American Units Program
 <html lang="en">
 <head>
     {% include "global-head-code.html"%}
-    <link rel="stylesheet" href="/css/global.css"/>
-    <link rel="stylesheet" href="/css/searchbar.css">
     <script src="https://cdn.jsdelivr.net/pyodide/v0.26.1/full/pyodide.js"></script>
-    {% include "site-header.html" %}
     <script>
+        if (localStorage.getItem('preferredCSSMode') === 'modernCSS') {
+            window.location.replace('/../../modernCSS/Projects/coding_blog/american_units');
+        }
         if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
             window.location.replace('/../../lessCSS/Projects/coding_blog/american_units');
-        }
-        if (localStorage.getItem('preferredCSSMode') === 'noCSS') {
-            window.location.replace('/../../noCSS/Projects/coding_blog/american_units');
         }
     </script>
 </head>
 <body>
-    <div class="top_content" style="padding-left: 20vw; padding-right: 20vw;">
-        <h1>{{title}}</h1>
-        <p>Has anybody ever asked you to convert to "Freedom Units" after you've given them a perfectly good response in metric units?
-        Well, this program will allow you to very easily convert to those freedom units that your friend so desperately desires!
-        And no, freedom units are not the same as imperial units. 
-        Just try typing in "10 m/s" into the search bar and then click any of the 3 buttons below to see what I mean.
-        </p>
-        <div class="container">
-            <input type="text" id="searchbar" name="search" placeholder="Type in metric units here">
-        </div>
-        <div class="centered_content">
-            <button onclick="runPythonSearch(10, false)" id="display10Button" class="button button1" style="border-radius:0;padding-top:0.5vw; padding-bottom: 0.5vw; padding-left:0.5vw; padding-right: 0.5vw;">Display top 10 results</button>
-            <button onclick="runPythonSearch(25, false)" id="display25Button" class="button button1" style="border-radius:0;padding-top:0.5vw; padding-bottom: 0.5vw; padding-left:0.5vw; padding-right: 0.5vw;">Display top 25 results</button>
-            <button onclick="runPythonSearch(25, true)" py-click="search_all_results" id="displayAllButton" class="button button1" style="border-radius:0;padding-top:0.5vw; padding-bottom: 0.5vw; padding-left:0.5vw; padding-right: 0.5vw;">Display all available results</button>
-        </div>
+    <a href="/../noCSS/Projects/coding_projects"><p>Go back to Coding Projects</p></a>
+    <h1>{{title}}</h1>
+    <p>Has anybody ever asked you to convert to "Freedom Units" after you've given them a perfectly good response in metric units?
+    Well, this program will allow you to very easily convert to those freedom units that your friend so desperately desires!
+    And no, freedom units are not the same as imperial units. 
+    Just try typing in "10 m/s" into the search bar and then click any of the 3 buttons below to see what I mean.
+    </p>
+    <input type="text" id="searchbar" name="search" placeholder="Type in metric units here">
+    <div class="centered_content">
+        <button onclick="runPythonSearch(10, false)" id="display10Button">Display top 10 results</button>
+        <button onclick="runPythonSearch(25, false)" id="display25Button">Display top 25 results</button>
+        <button onclick="runPythonSearch(25, true)"  id="displayAllButton">Display all available results</button>
     </div>
-    <div class="default_content" style="padding-left: 10vw; padding-right: 10vw;">
-        <div id="results" style="background-color:rgb(222, 222, 222); padding:1vw; border-radius: 1vw; display:flex">Waiting for input...</div>
-    </div>
-    {% include "go-home-button.html"%}
-    <div style="padding-top: 12vw"></div>
-    {% include "site-footer.html" %}
+    </br>
+    <div id="results">Waiting for input...</div>
     <script type="text/javascript">
         let pyodideReady = false;
         let pyodide;

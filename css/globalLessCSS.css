@@ -36,7 +36,7 @@ p {
 
 .button {
   border: none;
-  color: white;
+  color: rgb(40,40,40);
   padding: 1vw 2vw;
   text-align: center;
   text-decoration: none;
@@ -51,8 +51,7 @@ p {
   cursor: pointer;
 }
 .button1 {
-  background-color: black;
-  color: white;
+  background-color: rgb(222, 222, 222);
   border: 0.2vw solid grey;
 }
 .button1:hover {
