@@ -259,6 +259,8 @@ def format_return_value_as_string(list, denominatorStartPoint):
         returnString += list[1][i]
     if (len(list[1])-denominatorStartPoint)>1:
         returnString += ")"
+    if (denominatorStartPoint == len(list[1])):
+        returnString += ")"
     returnString += "\n"
     return returnString
 
