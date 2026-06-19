@@ -258,7 +258,7 @@ supportedUnits = [
 ["t","tesla","teslas"], 
 ["db","decibel","decibels"], 
 ["dollar","dollars","usd"],
-["liter","litre","litres","liters"],
+["L","liter","litre","litres","liters"],
 ["celsius"],
 ["min","minute","minutes"],
 ["hr","hrs","hour","hours"],
@@ -271,6 +271,7 @@ supportedUnits = [
 baseUnits = [
 ["m","metre","metres","meter","meters"], 
 ["g","gram","grams","gramme","grammes"],
+["L","liter","litre","litres","liters"],
 ["s","second","seconds"],
 ["A","ampere","amperes"],
 ["k","kelvin"],
@@ -312,10 +313,12 @@ SIPrefixes = [
 unitConversionList = [
     ["m", 'meter', 0],
     ["s", 'second', 0],
-    ["g", 'gram', 0]
+    ["g", 'gram', 0],
+    ["L", 'liter', 0]
 ]
 specialUnitConversionList = [
-    [['m','m'],[],'meterSquared']
+    [['m','m'],[],'meterSquared'],
+    [['m','m','m'],[],'meterCubed']
 ]
 
 def preprocess_and_reformat_input(userInput):
