@@ -48,7 +48,7 @@ supportedUnits = [
 ["t","tesla","teslas"], 
 ["db","decibel","decibels"], 
 ["dollar","dollars","usd"],
-["L","liter","litre","litres","liters"],
+["l","liter","litre","litres","liters"],
 ["celsius"],
 ["min","minute","minutes"],
 ["hr","hrs","hour","hours"],
@@ -104,7 +104,8 @@ unitConversionList = [
     ["m", 'meter', 0],
     ["s", 'second', 0],
     ["g", 'gram', 0],
-    ["L", 'liter', 0]
+    ["l", 'liter', 0],
+    ["n", 'newton', 0]
 ]
 specialUnitConversionList = [
     [['m','m'],[],'meterSquared'],
