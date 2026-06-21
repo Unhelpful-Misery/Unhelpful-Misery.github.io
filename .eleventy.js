@@ -317,7 +317,8 @@ unitConversionList = [
     ["l", 'liter', 0],
     ["n", 'newton', 0],
     ["j", 'joule', 0],
-    ["w", 'watt', 0]
+    ["w", 'watt', 0],
+    ["dollar", 'dollar', 0]
 ]
 specialUnitConversionList = [
     [['m','m'],[],'meterSquared'],
