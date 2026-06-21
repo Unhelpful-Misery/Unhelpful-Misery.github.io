@@ -105,7 +105,9 @@ unitConversionList = [
     ["s", 'second', 0],
     ["g", 'gram', 0],
     ["l", 'liter', 0],
-    ["n", 'newton', 0]
+    ["n", 'newton', 0],
+    ["w", 'watt', 0],
+    ["j", 'joule', 0]
 ]
 specialUnitConversionList = [
     [['m','m'],[],'meterSquared'],
@@ -223,7 +225,7 @@ def find_unit_types(list):
                 unit_identified = True
                 returnList.append(unitType)
         if (not unit_identified):
-            return["ERROR: American Unit could not be found for given input: " + list[i] + "\n", []]
+            return["ERROR: American units have not yet been implemented for the inputted unit: " + list[i] + "\n", []]
     return ['',returnList]
 
 def increment_indices_by_one(indices, unitTypeInformation):
