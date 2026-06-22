@@ -456,7 +456,7 @@ def get_top_value(list):
     return list.pop(0)
 
 def format_return_value_as_string(list, denominatorStartPoint):
-    returnString = "> "
+    returnString = "● "
     if len(list[1]) == 1:
         if (list[0] == 1):
             returnString += list[1][0] + "\\n"
