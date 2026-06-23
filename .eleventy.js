@@ -298,6 +298,8 @@ convertedUnits = [
 [2628000,"s",["month","months"]],
 [31536000,"s",["year","years"]]]
 SIPrefixes = [
+[Decimal('1000000000000000000'),["E","Exa","exa"]],
+[Decimal('1000000000000000'),["P","Peta","peta"]],
 [Decimal('1000000000000'),["T","tera","Tera"]],
 [Decimal('1000000000'),["G","giga","Giga"]],
 [Decimal('1000000'),["M","mega","Mega"]],
