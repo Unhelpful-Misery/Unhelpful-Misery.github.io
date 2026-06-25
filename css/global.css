@@ -74,6 +74,7 @@ iframe {
   width: 75vw;
   height: 52vw;
 }
+
 @media (min-width: 767px) {
   iframe {
     width: 50vw;
@@ -169,6 +170,7 @@ figure {
 }
 .centered_content_with_padding {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding-left: 20vw;
