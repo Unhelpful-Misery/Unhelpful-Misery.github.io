@@ -55,16 +55,21 @@ module.exports = function(eleventyConfig) {
         if(vidIDs.length === 0) { return ''; }
         //Add top content
         let content_block = `<style>.carousel_indicator.${"current-slide"+uniqueCarouselID} { background: rgb(236, 239, 235);} </style>`
-        content_block += `<div class="carousel_surround_component">
-        <button class="carousel_slide_left_button" id="${"carousel_slide_left_button"+uniqueCarouselID}" disabled style="left:${button_space};">⮜</button>
-        <div class="carousel">
+        content_block += `<div class="carousel_surround_component">`;
+        if(button_space != "20vw") {
+            content_block += `<button class="carousel_slide_left_button makeLeft10vwOnDesktop" id="${"carousel_slide_left_button"+uniqueCarouselID}" disabled>⮜</button>`;
+        }
+        else {
+            content_block += `<button class="carousel_slide_left_button" id="${"carousel_slide_left_button"+uniqueCarouselID}" disabled>⮜</button>`;
+        }
+        content_block+= `<div class="carousel">
             <div class="carousel_track-container">
                 <ul class="carousel_track" id="${"carousel_track"+uniqueCarouselID}">`;
         //Add first carousel element
         content_block += `<li class="carousel_slide ${"current-slide"+uniqueCarouselID}">
                         <p class="figureCaption">${titles[0]}</p>
                         <iframe
-                        src="https://www.youtube.com/embed/${vidIDs[0]}">
+                        src="https://www.youtube.com/embed/${vidIDs[0]}" class="carousel_iframe">
                         </iframe>                    
                         <p class="figure_small_caption">${captions[0]}</p>
                     </li>`;
@@ -72,7 +77,7 @@ module.exports = function(eleventyConfig) {
             content_block += `<li class="carousel_slide">
                         <p class="figureCaption">${titles[i]}</p>
                         <iframe 
-                        src="https://www.youtube.com/embed/${vidIDs[i]}">
+                        src="https://www.youtube.com/embed/${vidIDs[i]}" class="carousel_iframe">
                         </iframe>
                         <p class="figure_small_caption">${captions[i]}</p>
                     </li>`;
@@ -81,7 +86,12 @@ module.exports = function(eleventyConfig) {
         for (let i = 1; i < vidIDs.length; i++) {
             content_block += `<button class="carousel_indicator"></button>`;
         }
-        content_block += `</div></div><button class="carousel_slide_right_button" id="${"carousel_slide_right_button"+uniqueCarouselID}" style="right:${button_space};"">⮞</button></div>`;
+        if(button_space != "20vw") {
+            content_block += `</div></div><button class="carousel_slide_right_button makeRight10vwOnDesktop" id="${"carousel_slide_right_button"+uniqueCarouselID}"">⮞</button></div>`;
+        }
+        else {
+            content_block += `</div></div><button class="carousel_slide_right_button" id="${"carousel_slide_right_button"+uniqueCarouselID}"">⮞</button></div>`;
+        }
         content_block += `<script>
         /*Thank you to https://www.youtube.com/watch?v=gBzsE0oieio for providing a wonderful tutorial on how this code works! 
         I used to have this horrendous Frankenstein monster of a JS script based on a very bad understanding of JS, and this is much cleaner. 
@@ -184,7 +194,7 @@ module.exports = function(eleventyConfig) {
                 <p class="figureCaption" id="${titles[i]}">${titles[i]}</p></br>
             </div>
             <div class="centered_content">
-                <iframe style="width: 50vw; height: 29vw"
+                <iframe
                 src="https://www.youtube.com/embed/${vidIDs[i]}">
                 </iframe>
             </div>

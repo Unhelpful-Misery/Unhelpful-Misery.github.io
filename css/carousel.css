@@ -14,16 +14,22 @@
   justify-content: center;
 }
 .carousel {
-  position: relative;
-  width: 50vw;
-  height: 35vw;
-  margin: 0 2vw;
-  padding: 0;
+    position: relative;
+    width: 75vw;
+    height: 52vw;
+    margin: 0 2vw;
+    padding: 0;
+  }
+@media (min-width: 767px) {
+  .carousel {
+    width: 50vw;
+    height: 35vw;
+  }
 }
 .carousel_figure {
   width:100%;
 }
-iframe {
+.carousel_iframe {
   border: none;
   margin: 0;
   padding: 0;
@@ -53,7 +59,7 @@ iframe {
 .carousel_slide_left_button {
   position:absolute;
   top:0;
-  height: 35vw;
+  height: 52vw;
   background-color: black;
   border: 0.2vw solid grey;
   color: white;
@@ -65,6 +71,13 @@ iframe {
   flex-shrink: 0;
   border-radius: 1vw;
   transition-duration: 0.4s;
+  left: 5vw;
+}
+@media (min-width: 767px) {
+  .carousel_slide_left_button {
+    height: 35vw;
+    left: 20vw;
+  }
 }
 .carousel_slide_left_button:hover {
   background-color: white;
@@ -73,7 +86,7 @@ iframe {
 .carousel_slide_right_button {
   position:absolute;
   top:0;
-  height: 35vw;
+  height: 52vw;
   background-color: black;
   border: 0.2vw solid grey;
   color: white;
@@ -85,6 +98,23 @@ iframe {
   flex-shrink: 0;
   border-radius: 1vw;
   transition-duration: 0.4s;
+  right: 5vw;
+}
+@media (min-width: 767px) {
+  .carousel_slide_right_button {
+    height: 35vw;
+    right: 20vw;
+  }
+}
+@media (min-width: 767px) {
+  .makeRight10vwOnDesktop {
+    right: 10vw;
+  } 
+}
+@media (min-width: 767px) {
+  .makeLeft10vwOnDesktop {
+    left: 10vw;
+  } 
 }
 .carousel_slide_right_button:hover {
   background-color: white;
