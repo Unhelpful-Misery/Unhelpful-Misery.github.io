@@ -205,6 +205,22 @@ module.exports = function(eleventyConfig) {
         return content_block;
     });
 
+    eleventyConfig.addShortcode("YouTube_carousel_noCSS", function(vidIDs, titles=[""], captions=[""]) {
+        if(titles.length != vidIDs.length) { titles = new Array(vidIDs.length).fill(""); }
+        if(captions.length != vidIDs.length) { captions = new Array(vidIDs.length).fill(""); }
+        if(!Array.isArray(vidIDs)) { return ''; }
+        if(vidIDs.length === 0) { return ''; }
+        let content_block = "";
+        for (let i = 0; i < vidIDs.length; i++) {
+            content_block += `<p>${titles[i]}</p></br>
+            <iframe
+            src="https://www.youtube.com/embed/${vidIDs[i]}">
+            </iframe>
+            <p><i>${captions[i]}</i></p></br>`;
+        }
+        return content_block;
+    });
+
     eleventyConfig.addShortcode("footnote", function(text, top_padding = "0px") {
         return `<div class="footnote_wrapper" style="padding-top: ${top_padding}">
         <p class="footnote">${text}</p>

@@ -19,33 +19,20 @@ title: Physics Simulations
     <a href="/../noCSS/Projects/projects"><p>Go back to Projects Homepage</p></a>
     <h1>{{title}}</h1>
     <h2>Pendulum Simulations</h2>
-    <p>Simplified vs. Real Pendulum</p>
-    <iframe src="https://www.youtube.com/embed/zkly9cS29Yc"></iframe>
-    <p><i>In blue is a simplified model of a pendulum using a sinusoidal approximation. </br> In red is a more accurate model by computationally solving a differential equation.</i></p>
-    <p>Diverging Double Pendula</p>
-    <iframe src="https://www.youtube.com/embed/cRk3J8dho5Q"></iframe>
-    <p><i>The two double pendula are initially offset only by a small amount, but they quickly diverge!</i></p>
-    <p>Spring Pendulum</p>
-    <iframe src="https://www.youtube.com/embed/xyIQWh2VbP8"></iframe>
-    <p><i>A pendulum except with a stretching spring, rather than a stiff rod, to attach it to the pivot!</i></p>
-    <p>Double Spring Pendulum</p>
-    <iframe src="https://www.youtube.com/embed/oMVHKYS-a8E"></iframe>
-    <p><i>Stepping things up a bit, here's a double spring pendulum!</i></p>
-    <p>Spherical Pendulum</p>
-    <iframe src="https://www.youtube.com/embed/hNGEs-4FHs0"></iframe>
-    <p><i>A spherical pendulum, or a simple rigid rod pendulum in 3 dimensions instead of 2!</i></p>
-    <p>3D Double Pendula</p>
-    <iframe src="https://www.youtube.com/embed/pUMq4BEo6PY"></iframe>
-    <p><i>I added even more chaos to the double pendula by making them 3 dimensional!</i></p>
-    <p>3D Spring Pendulum</p>
-    <iframe src="https://www.youtube.com/embed/cFWBKdTUMW4"></iframe>
-    <p><i>The 3D spring pendulum is actually really pretty.</i></p>
-    <p>3D Double Spring Pendulum</p>
-    <iframe src="https://www.youtube.com/embed/PkuMf1wKOqc"></iframe>
-    <p><i>And, of course, what happens if we put EVERYTHING together!</i></p>
-    <p>Heart Pendulum</p>
-    <iframe src="https://www.youtube.com/embed/Dc5wuI1zR3o"></iframe>
-    <p><i>If you configure a double pendulum* in a very particular starting position, </br> it'll draw a heart on repeat!</i></p>
+    {% YouTube_carousel_noCSS
+        ["zkly9cS29Yc","cRk3J8dho5Q","xyIQWh2VbP8","oMVHKYS-a8E","hNGEs-4FHs0","pUMq4BEo6PY","cFWBKdTUMW4","PkuMf1wKOqc","Dc5wuI1zR3o"],
+        ["Simplified vs. Real Pendulum", "Diverging Double Pendula", "Spring Pendulum", "Double Spring Pendulum", 
+        "Spherical Pendulum", "3D Double Pendula", "3D Spring Pendulum", "3D Double Spring Pendulum", "Heart Pendulum"], 
+        ["In blue is a simplified model of a pendulum using a sinusoidal approximation. </br> In red is a more accurate model by computationally solving a differential equation.", 
+        "The two double pendula are initially offset only by a small amount, but they quickly diverge!", 
+        "A pendulum except with a stretching spring, rather than a stiff rod, to attach it to the pivot!", 
+        "Stepping things up a bit, here's a double spring pendulum!", 
+        "A spherical pendulum, or a simple rigid rod pendulum in 3 dimensions instead of 2!", 
+        "I added even more chaos to the double pendula by making them 3 dimensional!", 
+        "The 3D spring pendulum is actually really pretty.", 
+        "And, of course, what happens if we put EVERYTHING together!",
+        "If you configure a double pendulum* in a very particular starting position, </br> it'll draw a heart on repeat!"] 
+    %}
     <p>*The Heart Pendulum is one where the rods have uniformly distributed mass, rather than the balls</p>
 </body>
 </html>
