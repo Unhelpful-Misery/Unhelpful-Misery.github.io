@@ -6,6 +6,20 @@ title: I hate your website
 <html lang="en">
 <head>
   {% include "global-head-code.html"%}
+
+  <div style="outline:none">
+    <a href="/../../lessCSS/I_hate_your_website" onclick="goToAccessibilityWebsite()" id="accessibilityWebsiteButton" class="page__content-skip-link">Go to accessible version of website</a>
+  </div>
+  <div style="outline:none">
+    <a href="#main-content" class="page__content-skip-link">Skip to main content</a>
+  </div>
+  <script defer>
+    function goToAccessibilityWebsite() {
+      localStorage.setItem('preferredCSSMode', 'lessCSS');
+      window.location.replace('/../../lessCSS/I_hate_your_website');
+    }
+  </script>
+
   <link rel="stylesheet" href="/css/global.css"/>
   {% include "site-header.html" %}
   <script>
@@ -18,7 +32,7 @@ title: I hate your website
   </script>
 </head>
 <body>
-  <div class="top_content">
+  <div class="top_content" id="main-content" tabindex="-1">
     <h1>Want a change of scenery?</h1>
   </div>
   <div class="default_content">

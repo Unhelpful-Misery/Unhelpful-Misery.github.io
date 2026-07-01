@@ -7,6 +7,20 @@ title: Depresso's About Page
 <head>
   {% include "global-head-code.html"%}
   <link rel="stylesheet" href="/css/global.css"/>
+
+  <div style="outline:none">
+    <a href="/../../lessCSS/about_depresso" onclick="goToAccessibilityWebsite()" id="accessibilityWebsiteButton" class="page__content-skip-link">Go to accessible version of website</a>
+  </div>
+  <div style="outline:none">
+    <a href="#main-content" class="page__content-skip-link">Skip to main content</a>
+  </div>
+  <script defer>
+    function goToAccessibilityWebsite() {
+      localStorage.setItem('preferredCSSMode', 'lessCSS');
+      window.location.replace('/../../lessCSS/about_depresso');
+    }
+  </script>
+
   {% include "site-header.html" %}
   <script>
     if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
@@ -18,7 +32,7 @@ title: Depresso's About Page
   </script>
 </head>
 <body>
-  <div class="centered_content_with_padding" style="padding-top:2vw; padding-bottom: 0;">
+  <div id="main-content" tabindex="-1" class="centered_content_with_padding" style="padding-top:2vw; padding-bottom: 0;">
     <div class="box">
       <p>-----BEGIN PGP PUBLIC KEY BLOCK-----</br>
         Comment: User ID:	Depresso &lt;Depressos_proton@proton.me&gt;</br>
@@ -41,10 +55,10 @@ title: Depresso's About Page
       </p>
       <div class="footer" style="padding: 0 0; padding-top: 0.2vw">
         <div class="footer_icons" style="justify-content: right">
-          <a href="/assets/DepressoPublicKey.gpg" download="DepressoPublicKey.gpg"><img style="height:15px;" src="/assets/images/Download.png"></a>
+          <a href="/assets/DepressoPublicKey.gpg" download="DepressoPublicKey.gpg"><img alt="Download Depresso's public PGP key as a .gpg file" style="height:15px;" src="/assets/images/Download.png"></a>
           <button class="copy_button" id="copy_button" onclick="copyPGPPublicKey()">
-            <img style="height:15px" src="/assets/images/Copy.png">
-            <img style="height:15px" src="/assets/images/Checkmark.png">
+            <img alt="Copy Depresso's public PGP key to the clipboard" style="height:15px" src="/assets/images/Copy.png">
+            <img alt="Copy Depresso's public PGP key to the clipboard" style="height:15px" src="/assets/images/Checkmark.png">
           </button>
         </div>
       </div>

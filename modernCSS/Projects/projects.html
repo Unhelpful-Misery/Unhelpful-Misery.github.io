@@ -6,6 +6,20 @@ title: Projects Homepage
 <head>
     {% include "global-head-code.html"%}
     <link rel="stylesheet" href="/css/global.css"/>
+
+    <div style="outline:none">
+        <a href="/../../lessCSS/Projects/projects" onclick="goToAccessibilityWebsite()" id="accessibilityWebsiteButton" class="page__content-skip-link">Go to accessible version of website</a>
+    </div>
+    <div style="outline:none">
+        <a href="#main-content" class="page__content-skip-link">Skip to main content</a>
+    </div>
+    <script defer>
+        function goToAccessibilityWebsite() {
+        localStorage.setItem('preferredCSSMode', 'lessCSS');
+        window.location.replace('/../../lessCSS/Projects/projects');
+        }
+    </script>
+
     {% include "site-header.html" %}
     <script>
     if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
@@ -17,7 +31,7 @@ title: Projects Homepage
   </script>
 </head>
 <body>
-    <div class="top_content">
+    <div class="top_content" id="main-content" tabindex="-1">
         <h1>{{title}}</h1>
     </div>
     <div class="default_content">
@@ -29,10 +43,10 @@ title: Projects Homepage
         </p>
     </div>
     <div class="centered_content_with_padding">
-      <a href="/../modernCSS/Projects/robotics_projects"><button class="button button1">Robotics Projects ➤</button></a>
-      <a href="/../modernCSS/Projects/physical_projects"><button class="button button1">Physical Projects ➤</button></a>
-      <a href="/../modernCSS/Projects/physics_simulations"><button class="button button1">Physics Simulations ➤</button></a>
-      <a href="/../modernCSS/Projects/coding_projects"><button class="button button1">Coding Projects ➤</button></a> </br>
+      <a href="/../modernCSS/Projects/robotics_projects" class="button button1">Robotics Projects ➤</a>
+      <a href="/../modernCSS/Projects/physical_projects" class="button button1">Physical Projects ➤</a>
+      <a href="/../modernCSS/Projects/physics_simulations" class="button button1">Physics Simulations ➤</a>
+      <a href="/../modernCSS/Projects/coding_projects" class="button button1">Coding Projects ➤</a> </br>
     </div>
     <div class="default_content">
         <p>

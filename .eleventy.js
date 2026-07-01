@@ -13,7 +13,7 @@ module.exports = function(eleventyConfig) {
         let content_blocks = "";
         content_blocks += `<div class="centered_content"> \n`;
         for (let i = 0; i < names.length; i++) {
-            content_blocks += `<a href="${files[i]}" download="${names[i]}"><button class="button button1">Download ${names[i]}</button></a> \n`;
+            content_blocks += `<a href="${files[i]}" download="${names[i]}"><button class="button button1">Download ${names[i]}</a> \n`;
         }
         content_blocks += `</div> \n`;
         return content_blocks;
@@ -57,7 +57,7 @@ module.exports = function(eleventyConfig) {
         let content_block = `<style>.carousel_indicator.${"current-slide"+uniqueCarouselID} { background: rgb(236, 239, 235);} </style>`
         content_block += `<div class="carousel_surround_component">`;
         if(button_space != "20vw") {
-            content_block += `<button class="carousel_slide_left_button makeLeft10vwOnDesktop" id="${"carousel_slide_left_button"+uniqueCarouselID}" disabled>⮜</button>`;
+            content_block += `<button aria-label="Previous video button" class="carousel_slide_left_button makeLeft10vwOnDesktop" id="${"carousel_slide_left_button"+uniqueCarouselID}" disabled>⮜</button>`;
         }
         else {
             content_block += `<button class="carousel_slide_left_button" id="${"carousel_slide_left_button"+uniqueCarouselID}" disabled>⮜</button>`;
@@ -69,6 +69,7 @@ module.exports = function(eleventyConfig) {
         content_block += `<li class="carousel_slide ${"current-slide"+uniqueCarouselID}">
                         <p class="figureCaption">${titles[0]}</p>
                         <iframe
+                        title="${titles[0]}"
                         src="https://www.youtube.com/embed/${vidIDs[0]}" class="carousel_iframe">
                         </iframe>                    
                         <p class="figure_small_caption">${captions[0]}</p>
@@ -77,6 +78,7 @@ module.exports = function(eleventyConfig) {
             content_block += `<li class="carousel_slide">
                         <p class="figureCaption">${titles[i]}</p>
                         <iframe 
+                        title="${titles[0]}"
                         src="https://www.youtube.com/embed/${vidIDs[i]}" class="carousel_iframe">
                         </iframe>
                         <p class="figure_small_caption">${captions[i]}</p>
@@ -84,10 +86,10 @@ module.exports = function(eleventyConfig) {
         }
         content_block += `</ul></div><div class="carousel_nav" id="${"carousel_nav"+uniqueCarouselID}"> <button class="carousel_indicator ${"current-slide"+uniqueCarouselID}"></button>`;
         for (let i = 1; i < vidIDs.length; i++) {
-            content_block += `<button class="carousel_indicator"></button>`;
+            content_block += `<button aria-label="Click to go to video number ${i}" class="carousel_indicator"></button>`;
         }
         if(button_space != "20vw") {
-            content_block += `</div></div><button class="carousel_slide_right_button makeRight10vwOnDesktop" id="${"carousel_slide_right_button"+uniqueCarouselID}"">⮞</button></div>`;
+            content_block += `</div></div><button aria-label="Next video button" class="carousel_slide_right_button makeRight10vwOnDesktop" id="${"carousel_slide_right_button"+uniqueCarouselID}"">⮞</button></div>`;
         }
         else {
             content_block += `</div></div><button class="carousel_slide_right_button" id="${"carousel_slide_right_button"+uniqueCarouselID}"">⮞</button></div>`;
@@ -195,6 +197,7 @@ module.exports = function(eleventyConfig) {
             </div>
             <div class="centered_content">
                 <iframe
+                title="${titles[0]}"
                 src="https://www.youtube.com/embed/${vidIDs[i]}">
                 </iframe>
             </div>
@@ -214,6 +217,7 @@ module.exports = function(eleventyConfig) {
         for (let i = 0; i < vidIDs.length; i++) {
             content_block += `<p>${titles[i]}</p></br>
             <iframe
+            title="${titles[0]}"
             src="https://www.youtube.com/embed/${vidIDs[i]}">
             </iframe>
             <p><i>${captions[i]}</i></p></br>`;

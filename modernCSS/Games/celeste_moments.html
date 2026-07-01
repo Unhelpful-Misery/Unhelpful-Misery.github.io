@@ -9,6 +9,20 @@ title: Celeste Moments
     <link rel="stylesheet" href="/css/global.css"/>
     <link rel="stylesheet" href="/css/carousel.css"/>
     <link rel="stylesheet" href="/css/sidebar.css"/>
+
+    <div style="outline:none">
+        <a href="/../../lessCSS/Games/celeste_moments" onclick="goToAccessibilityWebsite()" id="accessibilityWebsiteButton" class="page__content-skip-link">Go to accessible version of website</a>
+    </div>
+    <div style="outline:none">
+        <a href="#main-content" class="page__content-skip-link">Skip to main content</a>
+    </div>
+    <script defer>
+        function goToAccessibilityWebsite() {
+        localStorage.setItem('preferredCSSMode', 'lessCSS');
+        window.location.replace('/../../lessCSS/Games/celeste_moments');
+        }
+    </script>
+
     {% include "site-header.html" %}
     <script>
     if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
@@ -38,7 +52,7 @@ title: Celeste Moments
                 </ul>
             </nav>
         </aside>
-        <main class="content">
+        <main class="content" id="main-content" tabindex="-1">
             <div> <h1>{{title}}</h1> </div>
             <div id="Thoughts">
                 <h2>Thoughts</h2>

@@ -92,7 +92,6 @@ iframe {
 }
 .dropdown .dropbtn {
   border: none;
-  outline: none;
   color: white;
   background-color: black;
   padding-top: 1.6vw;
@@ -227,4 +226,42 @@ header {
 }
 .display_as_checkmark img:last-child {
   display:block;
+}
+.page__content-skip-link:active, .page__content-skip-link:focus {
+    position: static!important;
+    clip: auto;
+    height: auto;
+    width: auto;
+    overflow: auto;
+}
+.page__content-skip-link:active, .page__content-skip-link:focus {
+    position: static!important;
+    clip: auto;
+    height: auto;
+    width: auto;
+    overflow: auto;
+}
+.page__content-skip-link {
+    position: absolute!important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    background-color: #012635;
+    color: #fff;
+    display: block;
+    padding: 3px;
+    text-align: center;
+}
+.page__content-skip-link {
+    position: absolute!important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    background-color: #012635;
+    color: #fff;
+    display: block;
+    padding: 3px;
+    text-align: center;
 }

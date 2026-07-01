@@ -7,6 +7,20 @@ title: Depresso's Homepage
 <head>
   {% include "global-head-code.html"%}
   <link rel="stylesheet" href="/css/global.css"/>
+  
+  <div style="outline:none">
+    <a href="/../../lessCSS/home" onclick="goToAccessibilityWebsite()" id="accessibilityWebsiteButton" class="page__content-skip-link">Go to accessible version of website</a>
+  </div>
+  <div style="outline:none">
+    <a href="#main-content" class="page__content-skip-link">Skip to main content</a>
+  </div>
+  <script defer>
+    function goToAccessibilityWebsite() {
+      localStorage.setItem('preferredCSSMode', 'lessCSS');
+      window.location.replace('/../../lessCSS/home');
+    }
+  </script>
+  
   {% include "site-header.html" %}
   <script>
     if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
@@ -18,17 +32,17 @@ title: Depresso's Homepage
   </script>
 </head>
 <body>
-  <div class="top_content">
+  <div class="top_content" id="main-content" tabindex="-1">
     <h1>Welcome!</h1>
     <p>I highly recommend you start off by checking out some of the projects I've made!
     Just click any of the buttons below!</p>  
   </div>
   <div class="centered_content_with_padding">
-      <a href="/../modernCSS/Projects/robotics_projects" class="button button1">Robotics Projects ➤</button></a>
-      <a href="/../modernCSS/Projects/physical_projects" class="button button1">Physical Projects ➤</button></a>
+      <a href="/../modernCSS/Projects/robotics_projects" class="button button1">Robotics Projects ➤</a>
+      <a href="/../modernCSS/Projects/physical_projects" class="button button1">Physical Projects ➤</a>
       <br class="mobile_break"></br>
-      <a href="/../modernCSS/Projects/physics_simulations" class="button button1">Physics Simulations ➤</button></a>
-      <a href="/../modernCSS/Projects/coding_projects" class="button button1">Coding Projects ➤</button></a> </br>
+      <a href="/../modernCSS/Projects/physics_simulations" class="button button1">Physics Simulations ➤</a>
+      <a href="/../modernCSS/Projects/coding_projects" class="button button1">Coding Projects ➤</a> </br>
   </div>
   <div class="default_content" style="padding-bottom: 15vw;">
     <p>Once you finished up looking at my projects, and you're actually interested in learning more about me as a person, feel free to see my about page by clicking the button at the top right, if you would like.</p>

@@ -8,6 +8,20 @@ title: Physical Projects
     {% include "global-head-code.html"%}
     <link rel="stylesheet" href="/css/global.css"/>
     <link rel="stylesheet" href="/css/table.css"/>
+
+    <div style="outline:none">
+        <a href="/../../lessCSS/Projects/physical_projects" onclick="goToAccessibilityWebsite()" id="accessibilityWebsiteButton" class="page__content-skip-link">Go to accessible version of website</a>
+    </div>
+    <div style="outline:none">
+        <a href="#main-content" class="page__content-skip-link">Skip to main content</a>
+    </div>
+    <script defer>
+        function goToAccessibilityWebsite() {
+        localStorage.setItem('preferredCSSMode', 'lessCSS');
+        window.location.replace('/../../lessCSS/Projects/physical_projects');
+        }
+    </script>
+
     {% include "site-header.html" %}
     <script>
     if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
@@ -19,7 +33,7 @@ title: Physical Projects
   </script>
 </head>
 <body>
-    <div class="top_content"> <h1>{{title}}</h1> </div>
+    <div class="top_content" id="main-content" tabindex="-1"> <h1>{{title}}</h1> </div>
     {% include "physical_projects/musket.html"%}
     {% include "physical_projects/wings.html" %}
     {% include "go-home-button.html"%}

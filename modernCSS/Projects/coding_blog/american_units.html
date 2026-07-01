@@ -8,6 +8,20 @@ title: American Units Program
     {% include "global-head-code.html"%}
     <link rel="stylesheet" href="/css/global.css"/>
     <link rel="stylesheet" href="/css/searchbar.css">
+
+    <div style="outline:none">
+        <a href="/../../lessCSS/Projects/coding_blog/american_units" onclick="goToAccessibilityWebsite()" id="accessibilityWebsiteButton" class="page__content-skip-link">Go to accessible version of website</a>
+    </div>
+    <div style="outline:none">
+        <a href="#main-content" class="page__content-skip-link">Skip to main content</a>
+    </div>
+    <script defer>
+        function goToAccessibilityWebsite() {
+        localStorage.setItem('preferredCSSMode', 'lessCSS');
+        window.location.replace('/../../lessCSS/Projects/coding_blog/american_units');
+        }
+    </script>
+
     <script src="https://cdn.jsdelivr.net/pyodide/v0.26.1/full/pyodide.js"></script>
     {% include "site-header.html" %}
     <script>
@@ -20,7 +34,7 @@ title: American Units Program
     </script>
 </head>
 <body>
-    <div class="top_content" style="padding-left: 20vw; padding-right: 20vw;">
+    <div class="top_content" id="main-content" tabindex="-1" style="padding-left: 20vw; padding-right: 20vw;">
         <h1>{{title}}</h1>
         <p>Has anybody ever asked you to convert to "Freedom Units" after you've given them a perfectly good response in metric units?
         Well, this program will allow you to very easily convert to those freedom units that your friend so desperately desires!

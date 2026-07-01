@@ -7,18 +7,32 @@ title: Coding Projects
     {% include "global-head-code.html"%}
     <link rel="stylesheet" href="/css/global.css"/>
     <link rel="stylesheet" href="/css/table.css"/>
+
+    <div style="outline:none">
+        <a href="/../../lessCSS/Projects/coding_projects" onclick="goToAccessibilityWebsite()" id="accessibilityWebsiteButton" class="page__content-skip-link">Go to accessible version of website</a>
+    </div>
+    <div style="outline:none">
+        <a href="#main-content" class="page__content-skip-link">Skip to main content</a>
+    </div>
+    <script defer>
+        function goToAccessibilityWebsite() {
+        localStorage.setItem('preferredCSSMode', 'lessCSS');
+        window.location.replace('/../../lessCSS/Projects/coding_projects');
+        }
+    </script>
+
     {% include "site-header.html" %}
     <script>
     if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
-      window.location.replace('/../../lessCSS/Projects/coding_blog/american_units');
+      window.location.replace('/../../lessCSS/Projects/Projects/coding_projects');
     }
     if (localStorage.getItem('preferredCSSMode') === 'noCSS') {
-      window.location.replace('/../../noCSS/Projects/coding_blog/american_units');
+      window.location.replace('/../../noCSS/Projects/Projects/coding_projects');
     }
     </script>
 </head>
 <body>
-    <div class="top_content">
+    <div class="top_content" id="main-content" tabindex="-1">
         <h1>{{title}}</h1>
     </div>
     <div class="default_content">
