@@ -36,6 +36,14 @@ p {
   cursor: pointer;
   border-radius: 1vw;
 }
+.clickableText {
+  background:none;
+  border:none;
+  margin:0;
+  padding:0;
+  font-family:Helvetica;
+  font-size: clamp(1rem,1vw,1.5rem);
+}
 .clickableText:hover {
   cursor: pointer;
 }

@@ -13,7 +13,7 @@ module.exports = function(eleventyConfig) {
         let content_blocks = "";
         content_blocks += `<div class="centered_content"> \n`;
         for (let i = 0; i < names.length; i++) {
-            content_blocks += `<a href="${files[i]}" download="${names[i]}"><button class="button button1">Download ${names[i]}</a> \n`;
+            content_blocks += `<a href="${files[i]}" download="${names[i]}" class="button button1">Download ${names[i]}</a> \n`;
         }
         content_blocks += `</div> \n`;
         return content_blocks;
@@ -84,9 +84,9 @@ module.exports = function(eleventyConfig) {
                         <p class="figure_small_caption">${captions[i]}</p>
                     </li>`;
         }
-        content_block += `</ul></div><div class="carousel_nav" id="${"carousel_nav"+uniqueCarouselID}"> <button class="carousel_indicator ${"current-slide"+uniqueCarouselID}"></button>`;
+        content_block += `</ul></div><div class="carousel_nav" id="${"carousel_nav"+uniqueCarouselID}"> <button aria-label="Click to go to video number 1" class="carousel_indicator ${"current-slide"+uniqueCarouselID}"></button>`;
         for (let i = 1; i < vidIDs.length; i++) {
-            content_block += `<button aria-label="Click to go to video number ${i}" class="carousel_indicator"></button>`;
+            content_block += `<button aria-label="Click to go to video number ${i+1}" class="carousel_indicator"></button>`;
         }
         if(button_space != "20vw") {
             content_block += `</div></div><button aria-label="Next video button" class="carousel_slide_right_button makeRight10vwOnDesktop" id="${"carousel_slide_right_button"+uniqueCarouselID}"">⮞</button></div>`;

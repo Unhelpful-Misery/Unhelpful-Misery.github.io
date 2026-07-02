@@ -44,6 +44,7 @@ html, body {
     padding-right:1.25vw;
     z-index: 1;
     display: flex;
+    align-items: center;
 }
 .header a {
     background-color: black;
@@ -82,8 +83,8 @@ iframe {
   }
 }
 .headerRight a {
-  padding-top: 1.6vw;
-  padding-bottom: 1.6vw;
+  padding-top: 1.5vw;
+  padding-bottom: 1.5vw;
 }
 .dropdown {
   overflow: hidden;
@@ -94,8 +95,8 @@ iframe {
   border: none;
   color: white;
   background-color: black;
-  padding-top: 1.6vw;
-  padding-bottom: 1.6vw;
+  padding-top: 1.5vw;
+  padding-bottom: 1.5vw;
   padding-left:1.25vw;
   padding-right:1.25vw;
   margin: 0;
