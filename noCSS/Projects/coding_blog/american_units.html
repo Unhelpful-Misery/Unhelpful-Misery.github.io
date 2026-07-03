@@ -33,5 +33,13 @@ title: American Units Program
     </br>
     <div id="results">Waiting for input...</div>
     {% americanUnitsCode %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script defer>
+        $("#searchbar").keyup(function(event) {
+            if (event.keyCode == 13) {
+                $("#display10Button").trigger('click');
+            }
+        })
+    </script>
 </body>
 </html>
