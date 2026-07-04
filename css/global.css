@@ -38,13 +38,19 @@ html, body {
     position: sticky;
     background-color:black;
     margin: 0 0;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 1.5vw;
+    padding-bottom: 1.5vw;
     padding-left: 1.25vw;
     padding-right:1.25vw;
     z-index: 1;
     display: flex;
     align-items: center;
+}
+@media (min-width: 767px) {
+  .header {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 .header a {
     background-color: black;
