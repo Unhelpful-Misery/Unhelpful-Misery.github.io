@@ -15,6 +15,9 @@
     top: 0;
   }
 }
+li{
+  margin: 0 0;
+}
 .sidebar a {
   padding: 0 0;
   text-decoration: none;
