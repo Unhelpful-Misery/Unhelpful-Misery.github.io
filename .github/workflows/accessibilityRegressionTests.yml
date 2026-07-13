@@ -19,6 +19,9 @@ jobs:
       - name: npm install
         run: |
           npm install
+      - name: Build Eleventy Site
+        run: |
+          npx @11ty/eleventy
       - name: run Lighthouse CI
         id: lighthouse
         env:
