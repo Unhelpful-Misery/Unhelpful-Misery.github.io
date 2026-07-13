@@ -1,7 +1,7 @@
 module.exports = {
   ci: {
     collect: {
-      staticDistDir: './lhci-root',
+      staticDistDir: './_site',
       url: [
         "/modernCSS/home",
         "/modernCSS/Projects/projects"
