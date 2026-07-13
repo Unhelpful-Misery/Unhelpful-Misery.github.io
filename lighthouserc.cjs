@@ -4,7 +4,16 @@ module.exports = {
       staticDistDir: './_site',
       url: [
         "/modernCSS/home/index.html",
-        "/modernCSS/Projects/projects/index.html"
+        "/modernCSS/about_depresso/index.html",
+        "/modernCSS/I_hate_your_website/index.html",
+        "/modernCSS/Projects/projects/index.html",
+        "/modernCSS/Projects/coding_projects/index.html",
+        "/modernCSS/Projects/physical_projects/index.html",
+        "/modernCSS/Projects/physics_simulations/index.html",
+        "/modernCSS/Projects/robotics_projects/index.html",
+        "/modernCSS/Projects/coding_blog/american_units/index.html",
+        "/modernCSS/Games/celeste_moments/index.html",
+        "/modernCSS/Games/touhou_moments/index.html",
       ],
       numberOfRuns: 1,
     },
