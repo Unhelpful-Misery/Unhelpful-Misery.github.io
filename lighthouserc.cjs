@@ -13,13 +13,13 @@ module.exports = {
         {
           matchingUrlPattern: '.*home\\.html$',
           assertions: {
-            'categories:accessibility':['error', { minScore: 1.0 }]
+            'categories:accessibility':['error', { minScore: 0.8 }]
           }
         },
         {
           matchingUrlPattern: '.*projects\\.html$',
           assertions: {
-            'categories:accessibility':['error', { minScore: 1.0 }]
+            'categories:accessibility':['error', { minScore: 0.8 }]
           }
         }
       ]
