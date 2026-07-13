@@ -16,10 +16,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - name: npm install, build
+      - name: npm install
         run: |
           npm install
-          npm run build
       - name: run Lighthouse CI
         id: lighthouse
         env:
