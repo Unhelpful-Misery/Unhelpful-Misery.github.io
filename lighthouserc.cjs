@@ -3,8 +3,8 @@ module.exports = {
     collect: {
       staticDistDir: './_site',
       url: [
-        "/modernCSS/home",
-        "/modernCSS/Projects/projects"
+        "/modernCSS/home.html",
+        "/modernCSS/Projects/projects.html"
       ],
       numberOfRuns: 1,
     },
