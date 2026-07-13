@@ -1,0 +1,37 @@
+name: Accessibility Regression Tests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  - name: Setup Node
+    if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
+    uses: actions/setup-node@v4
+    with:
+      node-version: v16.x
+
+  - name: Build Node assets
+    if: ${{ steps.project.outputs.deployment-enabled == 'true' }}
+    run: |
+      npm ci
+      npm run build
+
+  - name: Audit URL using Lighthouse
+        uses: treosh/lighthouse-ci-action@v9
+        id: lighthouse
+        with:
+          urls: |
+            https://unhelpful-misery.github.io/modernCSS/home/
+            https://unhelpful-misery.github.io/modernCSS/Projects/projects/
+            https://unhelpful-misery.github.io/modernCSS/Projects/robotics_projects/
+            https://unhelpful-misery.github.io/modernCSS/Projects/physical_projects/
+            https://unhelpful-misery.github.io/modernCSS/Projects/physics_simulations/
+            https://unhelpful-misery.github.io/modernCSS/Projects/coding_projects/
+            https://unhelpful-misery.github.io/modernCSS/about_depresso/
+            https://unhelpful-misery.github.io/modernCSS/Games/celeste_moments/
+            https://unhelpful-misery.github.io/modernCSS/Games/touhou_moments/
+            https://unhelpful-misery.github.io/modernCSS/I_hate_your_website/
+          temporaryPublicStorage: true
