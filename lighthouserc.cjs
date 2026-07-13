@@ -3,8 +3,8 @@ module.exports = {
     collect: {
       staticDistDir: './lhci-root',
       url: [
-        "/modernCSS/home.html",
-        "/modernCSS/Projects/projects.html"
+        "/modernCSS/home",
+        "/modernCSS/Projects/projects"
       ],
       numberOfRuns: 1,
     },
