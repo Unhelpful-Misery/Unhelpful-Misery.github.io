@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npx eleventy --serve",
+    "build": "run-s build:*",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-ghpages": "npx @11ty/eleventy --pathprefix=/Unhelpful-Misery.github.io/"
   },
