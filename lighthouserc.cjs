@@ -31,67 +31,133 @@ module.exports = {
     assert: {
       assertMatrix: [
         {
-          matchingUrlPattern: '.*modernCSS/home\\.html$',
-          assertions: {
-            'categories:accessibility':['error', { minScore: 0.8 }]
-          }
-        },
-        {
-          matchingUrlPattern: '.*modernCSS/about_depresso\\.html$',
-          assertions: {
-            'categories:accessibility':['error', { minScore: 0.8 }]
-          }
-        },
-        {
-          matchingUrlPattern: '.*modernCSS/I_hate_your_website\\.html$',
-          assertions: {
-            'categories:accessibility':['error', { minScore: 0.8 }]
-          }
-        },
-        {
-          matchingUrlPattern: '.*modernCSS/projects\\.html$',
-          assertions: {
-            'categories:accessibility':['error', { minScore: 0.8 }]
-          }
-        },
-        {
-          matchingUrlPattern: '.*modernCSS/coding_projects\\.html$',
+          matchingUrlPattern: '.*modernCSS/home/index\\.html$',
           assertions: {
             'categories:accessibility':['error', { minScore: 1.0 }]
           }
         },
         {
-          matchingUrlPattern: '.*modernCSS/physical_projects\\.html$',
+          matchingUrlPattern: '.*modernCSS/about_depresso/index\\.html$',
           assertions: {
             'categories:accessibility':['error', { minScore: 1.0 }]
           }
         },
         {
-          matchingUrlPattern: '.*modernCSS/robotics_projects\\.html$',
+          matchingUrlPattern: '.*modernCSS/I_hate_your_website/index\\.html$',
           assertions: {
             'categories:accessibility':['error', { minScore: 1.0 }]
           }
         },
         {
-          matchingUrlPattern: '.*modernCSS/physics_simulations\\.html$',
+          matchingUrlPattern: '.*modernCSS/Projects/projects/index\\.html$',
           assertions: {
             'categories:accessibility':['error', { minScore: 1.0 }]
           }
         },
         {
-          matchingUrlPattern: '.*modernCSS/american_units\\.html$',
+          matchingUrlPattern: '.*modernCSS/Projects/coding_projects/index\\.html$',
           assertions: {
             'categories:accessibility':['error', { minScore: 1.0 }]
           }
         },
         {
-          matchingUrlPattern: '.*modernCSS/celeste_moments\\.html$',
+          matchingUrlPattern: '.*modernCSS/Projects/physical_projects/index\\.html$',
           assertions: {
             'categories:accessibility':['error', { minScore: 1.0 }]
           }
         },
         {
-          matchingUrlPattern: '.*modernCSS/touhou_moments\\.html$',
+          matchingUrlPattern: '.*modernCSS/Projects/robotics_projects/index\\.html$',
+          assertions: {
+            'categories:accessibility':['error', { minScore: 1.0 }]
+          }
+        },
+        {
+          matchingUrlPattern: '.*modernCSS/Projects/physics_simulations/index\\.html$',
+          assertions: {
+            'categories:accessibility':['error', { minScore: 1.0 }]
+          }
+        },
+        {
+          matchingUrlPattern: '.*modernCSS/Projects/coding_blog/american_units/index\\.html$',
+          assertions: {
+            'categories:accessibility':['error', { minScore: 1.0 }]
+          }
+        },
+        {
+          matchingUrlPattern: '.*modernCSS/Games/celeste_moments/index\\.html$',
+          assertions: {
+            'categories:accessibility':['error', { minScore: 1.0 }]
+          }
+        },
+        {
+          matchingUrlPattern: '.*modernCSS/Games/touhou_moments/index\\.html$',
+          assertions: {
+            'categories:accessibility':['error', { minScore: 1.0 }]
+          }
+        },
+        {
+          matchingUrlPattern: '.*lessCSS/home/index\\.html$',
+          assertions: {
+            'categories:accessibility':['error', { minScore: 1.0 }]
+          }
+        },
+        {
+          matchingUrlPattern: '.*lessCSS/about_depresso/index\\.html$',
+          assertions: {
+            'categories:accessibility':['error', { minScore: 1.0 }]
+          }
+        },
+        {
+          matchingUrlPattern: '.*lessCSS/I_hate_your_website/index\\.html$',
+          assertions: {
+            'categories:accessibility':['error', { minScore: 1.0 }]
+          }
+        },
+        {
+          matchingUrlPattern: '.*lessCSS/Projects/projects/index\\.html$',
+          assertions: {
+            'categories:accessibility':['error', { minScore: 1.0 }]
+          }
+        },
+        {
+          matchingUrlPattern: '.*lessCSS/Projects/coding_projects/index\\.html$',
+          assertions: {
+            'categories:accessibility':['error', { minScore: 1.0 }]
+          }
+        },
+        {
+          matchingUrlPattern: '.*lessCSS/Projects/physical_projects/index\\.html$',
+          assertions: {
+            'categories:accessibility':['error', { minScore: 1.0 }]
+          }
+        },
+        {
+          matchingUrlPattern: '.*lessCSS/Projects/robotics_projects/index\\.html$',
+          assertions: {
+            'categories:accessibility':['error', { minScore: 1.0 }]
+          }
+        },
+        {
+          matchingUrlPattern: '.*lessCSS/Projects/physics_simulations/index\\.html$',
+          assertions: {
+            'categories:accessibility':['error', { minScore: 1.0 }]
+          }
+        },
+        {
+          matchingUrlPattern: '.*lessCSS/Projects/coding_blog/american_units/index\\.html$',
+          assertions: {
+            'categories:accessibility':['error', { minScore: 1.0 }]
+          }
+        },
+        {
+          matchingUrlPattern: '.*lessCSS/Games/celeste_moments/index\\.html$',
+          assertions: {
+            'categories:accessibility':['error', { minScore: 1.0 }]
+          }
+        },
+        {
+          matchingUrlPattern: '.*lessCSS/Games/touhou_moments/index\\.html$',
           assertions: {
             'categories:accessibility':['error', { minScore: 1.0 }]
           }
