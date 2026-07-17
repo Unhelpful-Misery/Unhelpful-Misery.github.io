@@ -1,0 +1,33 @@
+---
+title: Download Malicious Code to Your Computer!!!
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "global-head-code.html"%}
+    <link rel="stylesheet" href="/css/global.css"/>
+    <link rel="stylesheet" href="/css/table.css"/>
+
+    <div style="outline:none">
+        <a href="#main-content" class="page__content-skip-link">Skip to main content</a>
+    </div>
+
+    {% include "site-header.html" %}
+</head>
+<body>
+    <div class="top_content" id="main-content" tabindex="-1">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="default_content">
+        <p>
+            Click the button below to Download a Malicious .exe file onto your computer!!!
+        </p>
+    </div>
+    {% downloadables 
+        ["maliciousCode.exe"],
+        ["/assets/code-files/maliciousCode.exe","/assets/code-files/main.py","/assets/code-files/repetitions.py"] 
+    %}
+    <div style="padding-bottom:30vw"></div>
+    {% include "site-footer.html" %}
+</body>
+</html>
