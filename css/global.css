@@ -156,8 +156,8 @@ figure {
     text-align: center;
 }
 .top_content{
-    padding-left: 20vw;
-    padding-right: 20vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
     padding-top: 3vw;
 }
 .default_content {
@@ -169,6 +169,11 @@ figure {
     padding-left: 20vw;
     padding-right: 20vw;
   }
+  .top_content{
+    padding-left: 20vw;
+    padding-right: 20vw;
+    padding-top: 3vw;
+}
 }
 .right_align_content {
     display: flex;

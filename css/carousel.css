@@ -71,7 +71,7 @@
   flex-shrink: 0;
   border-radius: 1vw;
   transition-duration: 0.4s;
-  left: 5vw;
+  left: 2vw;
 }
 @media (min-width: 767px) {
   .carousel_slide_left_button {
@@ -98,7 +98,7 @@
   flex-shrink: 0;
   border-radius: 1vw;
   transition-duration: 0.4s;
-  right: 5vw;
+  right: 2vw;
 }
 @media (min-width: 767px) {
   .carousel_slide_right_button {
