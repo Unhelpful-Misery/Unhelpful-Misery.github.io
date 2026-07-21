@@ -1,12 +1,24 @@
 .figureCaption {
   text-align: center;
-  font-size: 1.1vw;
+  font-size: 4vw;
 }
 .figure_small_caption {
   font-style: italic;
   text-align: center;
-  font-size: 0.6vw;
+  font-size: 2vw;
   transform: scale(1, 1.5);
+}
+@media (min-width: 767px) {
+  .figureCaption {
+    text-align: center;
+    font-size: 1.1vw;
+  }
+  .figure_small_caption {
+    font-style: italic;
+    text-align: center;
+    font-size: 0.6vw;
+    transform: scale(1, 1.5);
+  }
 }
 .carousel_surround_component {
   position:relative;
@@ -16,7 +28,7 @@
 .carousel {
     position: relative;
     width: 75vw;
-    height: 52vw;
+    height: 100vw;
     margin: 0 2vw;
     padding: 0;
   }
@@ -59,7 +71,7 @@
 .carousel_slide_left_button {
   position:absolute;
   top:0;
-  height: 52vw;
+  height: 100vw;
   background-color: black;
   border: 0.2vw solid grey;
   color: white;
@@ -71,7 +83,7 @@
   flex-shrink: 0;
   border-radius: 1vw;
   transition-duration: 0.4s;
-  left: 2vw;
+  left: 0vw;
 }
 @media (min-width: 767px) {
   .carousel_slide_left_button {
@@ -86,7 +98,7 @@
 .carousel_slide_right_button {
   position:absolute;
   top:0;
-  height: 52vw;
+  height: 100vw;
   background-color: black;
   border: 0.2vw solid grey;
   color: white;
@@ -98,7 +110,7 @@
   flex-shrink: 0;
   border-radius: 1vw;
   transition-duration: 0.4s;
-  right: 2vw;
+  right: 0vw;
 }
 @media (min-width: 767px) {
   .carousel_slide_right_button {
@@ -140,11 +152,16 @@
 }
 .carousel_indicator {
   border-radius: 50%;
-  width: 2vw;
-  height: 2vw;
+  width: 20px;
+  height: 20px;
   padding: 0;
   margin: 0 0.25vw;
   background: black;
   cursor: pointer;
 }
-
+@media (min-width: 767px) {
+  .carousel_indicator {
+    width: 2vw;
+    height: 2vw;
+  }
+}

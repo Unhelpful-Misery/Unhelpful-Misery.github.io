@@ -149,8 +149,16 @@ iframe {
 figcaption {
   font-style: italic;
   text-align: center;
-  font-size: clamp(0.4rem,0.6vw,0.66rem);
+  font-size: 10px;
   transform: scale(1, 1.5);
+}
+@media (min-width: 767px) {
+  figcaption {
+    font-style: italic;
+    text-align: center;
+    font-size: clamp(0.4rem,0.6vw,0.66rem);
+    transform: scale(1, 1.5);
+  }
 }
 figure {
     text-align: center;
@@ -167,7 +175,7 @@ figure {
 @media (min-width: 767px) {
   .default_content {
     padding-left: 20vw;
-    padding-right: 20vw;
+    padding-right: 20vw;  
   }
   .top_content{
     padding-left: 20vw;

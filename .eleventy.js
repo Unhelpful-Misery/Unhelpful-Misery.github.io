@@ -202,7 +202,7 @@ module.exports = function(eleventyConfig) {
                 </iframe>
             </div>
             <div class=""centered_content>
-                <p class="figure_small_caption">${captions[i]}</p></br>
+                <p class="figure_small_caption" style="font-size: 8px">${captions[i]}</p></br>
             </div>`;
         }
         return content_block;
