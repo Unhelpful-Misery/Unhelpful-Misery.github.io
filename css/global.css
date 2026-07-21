@@ -160,9 +160,15 @@ figure {
     padding-right: 20vw;
     padding-top: 3vw;
 }
-.default_content{
+.default_content {
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+@media (min-width: 767px) {
+  .default_content {
     padding-left: 20vw;
     padding-right: 20vw;
+  }
 }
 .right_align_content {
     display: flex;
@@ -272,4 +278,26 @@ header {
     display: block;
     padding: 3px;
     text-align: center;
+}
+.postbox {
+  border: 3px solid black; 
+  padding: 5px; 
+  background-color: rgb(220,220,220);
+  border-radius: 1vw;
+  transition-duration: 0.4s;
+  position: relative;
+}
+.hasPost:hover {
+  transform: scale(1.1);
+  transform-origin: center;
+  z-index: 2;
+}
+.link-spanner{
+  position:absolute; 
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+  z-index: 1;
+  background-image: url('empty.gif');
 }
