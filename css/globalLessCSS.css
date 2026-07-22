@@ -244,3 +244,12 @@ header {
 .display_as_checkmark img:last-child {
   display:block;
 }
+.centeredImage {
+  width: 35vw;
+  height: 100%;
+}
+@media (min-width: 767px) {
+  .centeredImage{
+    width: 20vw;
+  }
+}

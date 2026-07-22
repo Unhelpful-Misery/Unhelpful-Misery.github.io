@@ -27,7 +27,7 @@ module.exports = function(eleventyConfig) {
         if(heights.length != images.length) { heights = new Array(images.length).fill("100%"); }
         let content_block = `<div class="centered_content"> <div class="multiple-images">`;
         for (let i = 0; i < images.length; i++) {
-            content_block += `<figure> <img style="width:${widths[i]}; height:${heights[i]}" src="${images[i]}" alt="${alt_text[i]}"/> \n`;
+            content_block += `<figure> <img class="centeredImage" src="${images[i]}" alt="${alt_text[i]}"/> \n`;
             content_block += `<figcaption>${captions[i]}</figcaption> </figure> \n`;
         }
         content_block+= `</div> </div>`;

@@ -314,7 +314,7 @@ header {
   transform-origin: center;
   z-index: 2;
 }
-.link-spanner{
+.link-spanner {
   position:absolute; 
   width:100%;
   height:100%;
@@ -322,4 +322,13 @@ header {
   left: 0;
   z-index: 1;
   background-image: url('empty.gif');
+}
+.centeredImage {
+  width: 35vw;
+  height: 100%;
+}
+@media (min-width: 767px) {
+  .centeredImage{
+    width: 20vw;
+  }
 }
