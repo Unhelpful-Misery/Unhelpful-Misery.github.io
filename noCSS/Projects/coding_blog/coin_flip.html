@@ -1,0 +1,36 @@
+---
+title: Flip a coin!
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "global-head-code.html"%}
+    <script>
+        if (localStorage.getItem('preferredCSSMode') === 'modernCSS') {
+            window.location.replace('/../../modernCSS/Projects/coding_blog/coin_flip');
+        }
+        if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
+            window.location.replace('/../../lessCSS/Projects/coding_blog/coin_flip');
+        }
+    </script>
+</head>
+<body>
+    <a href="/../noCSS/Projects/coding_projects"><p>Go back to Coding Projects</p></a>
+    <div id="currentScore">CURRENT STREAK: 0</div>
+    <div id="coin">Heads</div>
+    <button id="flipButton">FLIP COIN</button>
+    {% include "noCSS-site-footer.html" %}
+    <script src="/js/noCSSCoinScript.js"></script>
+    <script defer>
+        document.body.onkeyup = function(e) {
+            if (e.key == " " || e.code == "Space" || e.keyCode == 32) {
+                document.getElementById("flipButton").click();
+            }
+            if (e.code == "Enter" || e.keyCode == 13) {
+                document.getElementById("flipButton").click();
+            }
+        }
+    </script>
+</body>
+</html>

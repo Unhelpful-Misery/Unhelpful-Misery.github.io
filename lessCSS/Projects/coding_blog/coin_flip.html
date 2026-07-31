@@ -28,7 +28,7 @@ title: Flip a coin!
     <div style="position:relative">
         <div class="result" style="opacity: 0; position: absolute; z-index: 1; left: 0; right: 0; margin-inline: auto; width: fit-content;" id="result">🎉 Heads 🎉</div>
     </div>
-    <div class="top_content" id="main-content" tabindex="-1" style="padding-left: 20vw; padding-right: 20vw; padding-top: 5rem;">
+    <div class="top_content" id="main-content" tabindex="-1" style="padding-left: 20vw; padding-right: 20vw; padding-bottom: 5vw; padding-top: 5rem;">
         <div class="coin-container">
             <div class="coin" id="coin">
                 <div class="coin-face heads">H</div>
@@ -41,6 +41,7 @@ title: Flip a coin!
             <button class="flip-button" id="flipButton" style="border-radius:0; padding-bottom: 15px; padding-top: 15px; padding-left:50px; padding-right: 50px;">FLIP COIN</button>
         </div>
     </div>
+    {% include "lessCSS-site-footer.html" %}
     <script src="/js/coinScript.js"></script>
     <script defer>
         document.body.onkeyup = function(e) {
