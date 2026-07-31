@@ -6,26 +6,12 @@ title: Flip a coin!
 <html lang="en">
 <head>
     {% include "global-head-code.html"%}
-    <link rel="stylesheet" href="/css/global.css"/>
-    <link rel="stylesheet" href="/css/searchbar.css">
+    <link rel="stylesheet" href="/css/globalLessCSS.css"/>
     <link rel="stylesheet" href="/css/coinStyle.css"/>
 
-    <div style="outline:none">
-        <a href="/../../lessCSS/Projects/coding_blog/coin_flip" onclick="goToAccessibilityWebsite()" id="accessibilityWebsiteButton" class="page__content-skip-link">Go to accessible version of website</a>
-    </div>
-    <div style="outline:none">
-        <a href="#main-content" class="page__content-skip-link">Skip to main content</a>
-    </div>
-    <script defer>
-        function goToAccessibilityWebsite() {
-        localStorage.setItem('preferredCSSMode', 'lessCSS');
-        window.location.replace('/../../lessCSS/Projects/coding_blog/coin_flip');
-        }
-    </script>
-    {% include "site-header.html" %}
     <script>
-        if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
-            window.location.replace('/../../lessCSS/Projects/coding_blog/coin_flip');
+        if (localStorage.getItem('preferredCSSMode') === 'modernCSS') {
+            window.location.replace('/../../modernCSS/Projects/coding_blog/coin_flip');
         }
         if (localStorage.getItem('preferredCSSMode') === 'noCSS') {
             window.location.replace('/../../noCSS/Projects/coding_blog/coin_flip');
@@ -33,10 +19,11 @@ title: Flip a coin!
     </script>
 </head>
 <body>
-    <div>
-        <div style="display:flex;" class="centered_content">
-            <div class="currentScore" id="currentScore">0</div>
-        </div>
+    <div class="top_content">
+        {% lessCSSBackButton "/../lessCSS/Projects/coding_projects", "Go back to Coding Projects" %}
+    </div>
+    <div class="centered_content">
+        <div class="currentScore" id="currentScore">0</div>
     </div>
     <div style="position:relative">
         <div class="result" style="opacity: 0; position: absolute; z-index: 1; left: 0; right: 0; margin-inline: auto; width: fit-content;" id="result">🎉 Heads 🎉</div>
@@ -51,11 +38,9 @@ title: Flip a coin!
         </div>
 
         <div class="centered_content">
-            <button class="flip-button button button1" id="flipButton" style="border-radius:0;padding-top:15px; padding-bottom: 15px; padding-left:50px; padding-right: 50px;">FLIP COIN</button>
+            <button class="flip-button" id="flipButton" style="border-radius:0; padding-bottom: 15px; padding-top: 15px; padding-left:50px; padding-right: 50px;">FLIP COIN</button>
         </div>
     </div>
-    {% include "go-home-button.html"%}
-    {% include "site-footer.html" %}
     <script src="/js/coinScript.js"></script>
     <script defer>
         document.body.onkeyup = function(e) {

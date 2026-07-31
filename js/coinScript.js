@@ -13,7 +13,7 @@ else {
 }
 let isFlipping = false;
 let currentRotation = 0;
-var coinFlipSFX = new Audio('/assets/code-files/coin-flip/CoinFlip1.mp3');
+var coinFlipSFX = new Audio('/assets/code-files/coin-flip/coinFlip1.mp3');
 
 currentScore.textContent = currentSessionScore + ""
 
