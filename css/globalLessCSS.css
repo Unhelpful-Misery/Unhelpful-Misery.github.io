@@ -56,6 +56,10 @@ p {
   background-color: white;
   color: black;
 }
+.buttonSelected {
+  background-color: white;
+  color: black;
+}
 .header {
     overflow:visible;
     position: sticky;

@@ -91,7 +91,7 @@ module.exports = {
           }
         },
         {
-          matchingUrlPattern: '.*modernCSS/Games/touhou_moments/index\\.html$',
+          matchingUrlPattern: '.*modernCSS/Games/touhou_moments/normal/index\\.html$',
           assertions: {
             'categories:accessibility':['error', { minScore: 1.0 }]
           }
@@ -157,7 +157,7 @@ module.exports = {
           }
         },
         {
-          matchingUrlPattern: '.*lessCSS/Games/touhou_moments/index\\.html$',
+          matchingUrlPattern: '.*lessCSS/Games/touhou_moments/normal/index\\.html$',
           assertions: {
             'categories:accessibility':['error', { minScore: 1.0 }]
           }

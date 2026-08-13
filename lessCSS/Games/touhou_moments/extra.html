@@ -1,0 +1,89 @@
+---
+title: Touhou Moments (Extra Stages)
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "global-head-code.html"%}
+    <link rel="stylesheet" href="/css/globalLessCSS.css"/>
+    <link rel="stylesheet" href="/css/carousel.css"/>
+    <link rel="stylesheet" href="/css/sidebar.css"/>
+
+    <script>
+    if (localStorage.getItem('preferredCSSMode') === 'modernCSS') {
+      window.location.replace('/../../modernCSS/Games/touhou_moments/extra');
+    }
+    if (localStorage.getItem('preferredCSSMode') === 'noCSS') {
+      window.location.replace('/../../noCSS/Games/touhou_moments/extra');
+    }
+    </script>
+</head>
+<body>
+    <div class="TOCed_content_container"> 
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#Thoughts">Thoughts</a></li>
+                    <li><a href="#Touhou7">Touhou 7</a></li>
+                    <li><a href="#Touhou16">Touhou 16</a></li>
+                    <li><a href="#Touhou18">Touhou 18</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            {% lessCSSBackButton "/../lessCSS/about_depresso", "Go back to About Page" %}
+            <div class="centered_content">
+                <a class="button button1" href="/../../modernCSS/Games/touhou_moments/normal" style="border-radius:0;padding-top:0.5vw; padding-bottom: 0.5vw; padding-left:0.5vw; padding-right: 0.5vw;">Normal Mode</a>
+                <a class="button button1 buttonSelected" style="border-radius:0;padding-top:0.5vw; padding-bottom: 0.5vw; padding-left:0.5vw; padding-right: 0.5vw;">Extra Stage</a>
+            </div>
+            <div> <h1>{{title}}</h1> </div>
+            <div id="Thoughts">
+                <h2>Thoughts</h2>
+            </div>
+            <p style="padding-left: 3vw">
+                At first, I did not realise how much more memorisation was required to complete the extra stages compared to the regular game.
+                Once I got adjusted to that fact, then the extra stages became a lot more fun. 
+                Unfortunately, that means that I don't think I'll ever really sit down to play an extra stage for the funsies every once in a while, since it kind of has to be a big session.
+            </p>
+            <div id="Touhou7">
+                <h2>Touhou 7: Perfect Cherry Blossom</h2>
+            </div>
+            <p style="padding-left: 3vw">
+                Probably one of the easiest extra stages, if I'm to be completely honest. 
+                Just . . . Don't go into this extra stage DIRECTLY after beating the game for the first time in normal mode, or you'll be quite surprised.
+            </p>
+            {% YouTube_carousel_lessCSS
+                ["ndkQmQBxjH8"],
+                ["Touhou 7 Extra Stage clear (Sakuya A)"],
+                [""]
+            %}
+            <div id="Touhou16">
+                <h2>Touhou 16: Hidden Star in Four Seasons</h2>
+            </div>
+            <p style="padding-left: 3vw">
+                Really easy Extra Stage if you pick homing Reimu, because the damage you deal to the enemies that come behind you just becomes insane.
+                Maybe I'll try it with other characters too, sometime in the future when I'm a better Touhou player.
+            </p>
+            {% YouTube_carousel_lessCSS
+                ["Q4E4Y9zYzE0"],
+                ["Touhou 16 Extra Stage clear (Reimu)"],
+                [""]
+            %}
+            <div id="Touhou18">
+                <h2>Touhou 18: Unconnected Marketeers</h2>
+            </div>
+            <p style="padding-left: 3vw">
+                I dunno about most people, but I felt like this was the easiest extra stage provided that you got a good card pickup and you've beaten the normal mode using a blank card.
+                Having three starting cards is just really useful in this extra stage.
+            </p>
+            {% YouTube_carousel_lessCSS
+                ["HwLVKP5Z6Bw", "1YX0QZtRO3Y"],
+                ["Touhou 18 Extra Stage clear (Sanae)", "Touhou 18 Extra Stage clear (Reimu)"],
+                ["Legendary drum pick-up right here", "Don't worry, I can do it without the drum too!"]
+            %}
+        </main>
+    </div>
+    {% include "site-footer.html" %}
+</body>
+</html>

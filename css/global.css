@@ -33,6 +33,10 @@ html, body {
   background-color: white;
   color: black;
 }
+.buttonSelected {
+  background-color: white;
+  color: black;
+}
 @media (min-width: 767px) {
   .button {
     padding: 1vw 2vw;

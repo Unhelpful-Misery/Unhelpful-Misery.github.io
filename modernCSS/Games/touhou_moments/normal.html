@@ -1,5 +1,5 @@
 ---
-title: Touhou Moments
+title: Touhou Moments (Normal Mode)
 ---
 
 <!DOCTYPE html>
@@ -11,7 +11,7 @@ title: Touhou Moments
     <link rel="stylesheet" href="/css/sidebar.css"/>
 
     <div style="outline:none">
-        <a href="/../../lessCSS/Games/touhou_moments" onclick="goToAccessibilityWebsite()" id="accessibilityWebsiteButton" class="page__content-skip-link">Go to accessible version of website</a>
+        <a href="/../../lessCSS/Games/touhou_moments/normal" onclick="goToAccessibilityWebsite()" id="accessibilityWebsiteButton" class="page__content-skip-link">Go to accessible version of website</a>
     </div>
     <div style="outline:none">
         <a href="#main-content" class="page__content-skip-link">Skip to main content</a>
@@ -19,17 +19,17 @@ title: Touhou Moments
     <script defer>
         function goToAccessibilityWebsite() {
         localStorage.setItem('preferredCSSMode', 'lessCSS');
-        window.location.replace('/../../lessCSS/Games/touhou_moments');
+        window.location.replace('/../../lessCSS/Games/touhou_moments/normal');
         }
     </script>
 
     {% include "site-header.html" %}
     <script>
     if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
-      window.location.replace('/../../lessCSS/Games/touhou_moments');
+      window.location.replace('/../../lessCSS/Games/touhou_moments/normal');
     }
     if (localStorage.getItem('preferredCSSMode') === 'noCSS') {
-      window.location.replace('/../../noCSS/Games/touhou_moments');
+      window.location.replace('/../../noCSS/Games/touhou_moments/normal');
     }
     </script>
 </head>
@@ -44,15 +44,22 @@ title: Touhou Moments
                     <li><a href="#Touhou8">Touhou 8</a></li>
                     <li><a href="#Touhou10">Touhou 10</a></li>
                     <li><a href="#Touhou11">Touhou 11</a></li>
+                    <li><a href="#Touhou12">Touhou 12</a></li>
                     <li><a href="#Touhou13">Touhou 13</a></li>
                     <li><a href="#Touhou14">Touhou 14</a></li>
+                    <li><a href="#Touhou15">Touhou 15</a></li>
                     <li><a href="#Touhou16">Touhou 16</a></li>
                     <li><a href="#Touhou17">Touhou 17</a></li>
                     <li><a href="#Touhou18">Touhou 18</a></li>
+                    <li><a href="#Touhou20">Touhou 20</a></li>
                 </ul>
             </nav>
         </aside>
         <main class="content" id="main-content" tabindex="-1">
+            <div class="centered_content">
+                <a class="button button1 buttonSelected" style="border-radius:0;padding-top:0.5vw; padding-bottom: 0.5vw; padding-left:0.5vw; padding-right: 0.5vw;">Normal Mode</a>
+                <a class="button button1" href="/../../modernCSS/Games/touhou_moments/extra" style="border-radius:0;padding-top:0.5vw; padding-bottom: 0.5vw; padding-left:0.5vw; padding-right: 0.5vw;">Extra Stage</a>
+            </div>
             <div> <h1>{{title}}</h1> </div>
             <div id="Thoughts">
                 <h2>Thoughts</h2>
@@ -60,7 +67,7 @@ title: Touhou Moments
             <p style="padding-left: 3vw">
                 I know bullet hells aren't for everybody, but I personally love the Touhou games I've played so far.
                 There's just something so amazing about that moment when you perfectly dodge and weave through an attack that you initially thought was impossible.
-                That being said, I'm still a terrible Touhou player, though.
+                That being said, I'm still a terrible Touhou player and very much a bomb-spammer, though.
             </p>
             <div id="Touhou6">
                 <h2>Touhou 6: Embodiment of Scarlet Devil</h2>
@@ -88,9 +95,9 @@ title: Touhou Moments
             </p>
             {% YouTube_carousel 
                 "Touhou7",
-                ["l_zX_NDP2sg", "18ElG7OKDys", "tZmuwe5QsRI", "2SfLV988k9k", "5_RtzVd1G7k", "KhWp_u4O6QI", "ndkQmQBxjH8"],
-                ["Touhou 7 clear (Marisa B)", "Touhou 7 clear (Sakuya A)", "Touhou 7 clear (Reimu B)", "Touhou 7 clear (Marisa A)", "Touhou 7 clear (Sakuya B)", "Touhou 7 clear (Reimu A)", "Touhou 7 Extra Stage clear (Sakuya A)"],
-                ["Marisa might not be the optimal character to play, but I just love her MASTER SPARK!!", "", "", "", "", "" ,"I really did not expect to beat the Extra Stage on this run, to be completely honest."],
+                ["l_zX_NDP2sg", "18ElG7OKDys", "tZmuwe5QsRI", "2SfLV988k9k", "5_RtzVd1G7k", "KhWp_u4O6QI"],
+                ["Touhou 7 clear (Marisa B)", "Touhou 7 clear (Sakuya A)", "Touhou 7 clear (Reimu B)", "Touhou 7 clear (Marisa A)", "Touhou 7 clear (Sakuya B)", "Touhou 7 clear (Reimu A)"],
+                ["Marisa might not be the optimal character to play, but I just love her MASTER SPARK!!", "", "", "", "", "" ],
                 "10vw"
             %}
             <div id="Touhou8">
@@ -106,7 +113,7 @@ title: Touhou Moments
                 "Touhou8",
                 ["9szYPIlGFiM","J2quDtqOCb8", "7xw3rxxHUhQ", "n6X9mMTy_a8", "ndLN1UyiU38", "pYYXSB_ps4k", "P0nRtbQ1Zm0"],
                 ["Difficult last spell almost complete","Touhou 8 clear (Reimu and Yukari)","Touhou 8 clear (Sakuya and Remilia)","Touhou 8 True End (Sakuya and Remilia)","Touhou 8 clear (Marisa and Alice)","Touhou 8 True End (Marisa and Alice)","Touhou 8 clear (Youmu and Sakuya)"],
-                ["Goodness, this has got to be one of the most frustrating Touhou moments. </br> (I still haven't cleared that last spell, by the way. The curving bullets always get me)","Beating the game isn't so hard when you can get hit, go make a cup of coffee, and come back to press the death bomb button!", "I love the idea of planting a bomb in the enemy's face while they're dialoguing", "", "", "", ""],
+                ["Goodness, this has got to be one of the most frustrating Touhou moments. </br> (I still haven't cleared that last spell, by the way. The curving bullets always get me)","Clearing the game isn't so hard when you can get hit, go make a cup of coffee, and come back to press the death bomb button!", "I love the idea of planting a bomb in the enemy's face while they're dialoguing", "", "", "", ""],
                 "10vw"
             %}
             <div id="Touhou10">
@@ -140,6 +147,20 @@ title: Touhou Moments
                 ["I absolutely love how everything about Utsuho's boss fight is waaay over-the-top in terms of power. I wanna get good enough to clear all of her spellcards, though.",""],
                 "10vw"
             %}
+            <div id="Touhou12">
+                <h2>Touhou 12: Undefined Fantastic Object</h2>
+            </div>
+            <p style="padding-left: 3vw">
+                Honestly, I heard really bad things about UFO, but when I played it for myself, I didn't think the gimmick was actually that bad!
+                It feels nice to have a bunch of lives with which to tackle bosses, but it doesn't feel like Touhou 17 where the gimmick completely trivialises the boss sections.
+            </p>
+            {% YouTube_carousel 
+                "Touhou12",
+                ["7_YJBh6MxDY", "3jgan32DViE", "yyJs52JYuHc"],
+                ["Touhou 12 Final Boss clear (Sanae B)", "Touhou 12 clear (Sanae B)", "Touhou 12 clear (Reimu B)"],
+                ["I love how incredibly pretty this boss fight is. So mesmerising.","","I dunno why I played with Reimu B first. It's way easier with Sanae B."],
+                "10vw"
+            %}
             <div id="Touhou13">
                 <h2>Touhou 13: Ten Desires</h2>
             </div>
@@ -170,6 +191,22 @@ title: Touhou Moments
                 ["IRknT5KQL6w","E6l82NFjis8 ","u4U-2DcHyYg","J_K0U43YOxg "],
                 ["Touhou 14 Final Boss clear (Sakuya A)", "Touhou 14 Final Boss clear (Reimu A)", "Touhou 14 clear (Sakuya A)", "Touhou 14 clear (Reimu A)"],
                 ["Goodness gracious, Sakuya A's bomb is really something. I feel like I got scammed out of a few lives when my bomb ended right before I got hit, though.", "Is it intended to spam this many bombs?","Sakuya A has *got* to be the best character in this game. I think she's the only reason I was able to get through this insanity.",""],
+                "10vw"
+            %}
+            <div id="Touhou15">
+                <h2>Touhou 15: Legacy of Lunatic Kingdom</h2>
+            </div>
+            <p style="padding-left: 3vw">
+                The Touhou game which has probably indisputably the hardest attack patterns to dodge.
+                Reisen's bomb carried me through this thing, and even then, I lost so many resources to Clownpiece.
+                I hope that someday I'll be able to clear normal mode using Reimu or Marisa.
+                At the same time, I do think LoLK is pretty fun, especially with Reisen's bomb because you always are at least trying to dodge the attacks.
+            </p>
+            {% YouTube_carousel 
+                "Touhou15",
+                ["N_hgc8trXO0", "lVYawLF-4kY"],
+                ["Touhou 15 Final Boss clear (Reisen)", "Touhou 15 clear (Reisen)"],
+                ["Honestly, if you practice a lot, quite a few of the attacks are surprisingly doable","My brain now associates images of Clownpiece with the pi-chuun sound effect."],
                 "10vw"
             %}
             <div id="Touhou16">
@@ -207,13 +244,28 @@ title: Touhou Moments
             </div>
             <p style="padding-left: 3vw">
                 I know the roguelike card mechanic of Touhou 18 is something that people either love or hate, but I absolutely love this mechanic.
-                Even if it is a bit difficult to beat for the first time, the kinds of runs that you can have on your repeat playthroughs are just so much fun. 
+                Even if it is a bit difficult to clear for the first time, the kinds of runs that you can have on your repeat playthroughs are just so much fun. 
             </p>
             {% YouTube_carousel
                 "Touhou18",
                 ["3oP8xgZYAHM", "p-hlVQXD7qs", "HsJGQA3js6E", "FcULOI-L6Jg", "3Hi6DHK077M"],
                 ["Touhou 18 Final Boss clear (Sanae)", "Touhou 18 Normal Mode clear (Sanae)", "Touhou 18 clear (Reimu)", "Touhou 18 clear (Marisa)", "Touhou 18 clear (Sakuya)"],
-                ["Something about having a ton of ability cards to swap between mid-battle makes me feel so smart", "Beating the game for the first time is kind of rough, but I did it eventually!", "", "",""],
+                ["Something about having a ton of ability cards to swap between mid-battle makes me feel so smart", "Clearing the game for the first time is kind of rough, but I did it eventually!", "", "",""],
+                "10vw"
+            %}
+            <div id="Touhou20">
+                <h2>Touhou 20: Fossilized Wonders</h2>
+            </div>
+            <p style="padding-left: 3vw">
+                I'll be honest, I don't really like Touhou 20 that much . . . 
+                While the different gemstones and stuff are fine and actually fairly interesting, I don't like how the difficulty in attacks is balanced out by the quantity of bombs you get.
+                It just forces me to bomb through most of the attacks which I don't find very fun.
+            </p>
+            {% YouTube_carousel
+                "Touhou20",
+                ["2k6gxfqYAPI", "rjEAkzwxYhs", "PmIJkIdzvMo", "xAwE1nbEAmA"],
+                ["Touhou 20 Final Boss clear (Reimu Moon)", "Touhou 20 Normal Mode clear (Reimu Moon)", "Touhou 18 clear (Reimu Scarlet)", "Touhou 20 clear (Reimu Subterranean)"],
+                ["Clearing spellcards is a lot easier when you can erase bullets.", "", "", ""],
                 "10vw"
             %}
             </br>

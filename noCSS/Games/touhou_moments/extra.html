@@ -1,0 +1,68 @@
+---
+title: Touhou Moments (Extra Stages)
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "global-head-code.html"%}
+    <script>
+        if (localStorage.getItem('preferredCSSMode') === 'modernCSS') {
+        window.location.replace('/../../modernCSS/Games/touhou_moments/extra');
+        }
+        if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
+        window.location.replace('/../../lessCSS/Games/touhou_moments/extra');
+        }
+    </script>
+</head>
+<body>
+<a href="/../noCSS/about_depresso"><p>Go back to About Page</p></a>
+<button onclick="normalPageRedirect()">Normal</button>
+<button>Extra</button>
+<h1>{{title}}</h1>
+<h2>Thoughts</h2>
+<p>
+    At first, I did not realise how much more memorisation was required to complete the extra stages compared to the regular game.
+    Once I got adjusted to that fact, then the extra stages became a lot more fun. 
+    Unfortunately, that means that I don't think I'll ever really sit down to play an extra stage for the funsies every once in a while, since it kind of has to be a big session.
+</p>
+<h2>Touhou 7: Perfect Cherry Blossom</h2>
+<p>
+    Probably one of the easiest extra stages, if I'm to be completely honest. 
+    Just . . . Don't go into this extra stage DIRECTLY after beating the game for the first time in normal mode, or you'll be quite surprised.
+</p>
+{% YouTube_carousel_noCSS
+    ["ndkQmQBxjH8"],
+    ["Touhou 7 Extra Stage clear (Sakuya A)"],
+    [""]
+%}
+<h2>Touhou 16: Hidden Star in Four Seasons</h2>
+<p>
+    Really easy Extra Stage if you pick homing Reimu, because the damage you deal to the enemies that come behind you just becomes insane.
+    Maybe I'll try it with other characters too, sometime in the future when I'm a better Touhou player.
+</p>
+{% YouTube_carousel_noCSS
+    ["Q4E4Y9zYzE0"],
+    ["Touhou 16 Extra Stage clear (Reimu)"],
+    [""]
+%}
+<h2>Touhou 18: Unconnected Marketeers</h2>
+<p>
+    I dunno about most people, but I felt like this was the easiest extra stage provided that you got a good card pickup and you've beaten the normal mode using a blank card.
+    Having three starting cards is just really useful in this extra stage.
+</p>
+{% YouTube_carousel_noCSS
+    ["HwLVKP5Z6Bw", "1YX0QZtRO3Y"],
+    ["Touhou 18 Extra Stage clear (Sanae)", "Touhou 18 Extra Stage clear (Reimu)"],
+    ["Legendary drum pick-up right here", "Don't worry, I can do it without the drum too!"]
+%}
+<script>
+    function extraPageRedirect() {
+        window.location.replace('/../../noCSS/Games/touhou_moments/extra');
+    }
+    function normalPageRedirect() {
+        window.location.replace('/../../noCSS/Games/touhou_moments/normal');
+    }
+</script>
+</body>
+</html>
