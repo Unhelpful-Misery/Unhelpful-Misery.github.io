@@ -1,0 +1,122 @@
+---
+title: Patchwork Development Blog
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "global-head-code.html"%}
+    <script>
+        if (localStorage.getItem('preferredCSSMode') === 'modernCSS') {
+            window.location.replace('/../../modernCSS/Projects/robotics_blog/patchwork');
+        }
+        if (localStorage.getItem('preferredCSSMode') === 'lessCSS') {
+            window.location.replace('/../../lessCSS/Projects/robotics_blog/patchwork');
+        }
+    </script>
+</head>
+<body>
+    <a href="/../noCSS/Projects/robotics_projects"><p>Go back to Robotics Projects</p></a>
+    <h1>{{title}}</h1>
+    <p>
+        After constructing the first two robots and gaining a bit of confidence with my skills, I started working on the bigger project that would occupy an entire summer. 
+        At this point, the new project still didn’t really have a name in my head. 
+        It was essentially a mobile base with caterpillar treads, like a bulldozer or excavator. 
+        It would have 8 “attachment points” on top of it, so you could make an entirely new robot, and as long as it had 8 attachment points in the same positions on its bottom, you could put the new robot on the mobile base!
+    </p>
+    </br>
+    <p>
+        The first step was, of course, drawing out schematics. 
+        And I always love to do this step on paper, because we’ll get enough messing around with computers and electronic devices later in the process. 
+        So, here are scans of my initial drawings!
+    </p>
+    <img src="/assets/images/Alexs_Doohickey_Schematic_2.png" alt="Schematics of Patchwork's larger parts." width="300">
+    <img src="/assets/images/Alexs_Doohickey_Schematic_1.png" alt="Schematics of Patchwork's smaller parts." width="300">
+    <p>
+        The second step was actually translating these schematics onto a 3D model. 
+        I used my favourite 3D modelling software: Onshape! 
+        After another week, the initial files were ready (And goodness, I did not know how much I would be coming back to these to make tons of edits).
+    </p>
+    <img src="/assets/images/PatchworkModel.png" alt="Patchwork 3D-modelled in Onshape." width="300">
+    <p>
+        Out of all of the robots I’ve made so far, this one was probably going to be the most complex, and it was certainly going to be the largest. 
+        Anyway, it’s great having everything nice and neatly laid out on a computer, but if I want a robot, I’m going to actually have to get the 3D models into reality. 
+        Thus, after finally pulling the trigger on buying an Elegoo Centauri Carbon 3D printer, I got to work!
+    </p>
+    </br>
+    <p>
+        After another week and testing out the printer and configuring settings, I got a couple of test print parts completed!
+    </p>
+    <img src="/assets/images/Patchwork_Gear_Segment.png" alt="A 3D printed Drive Sprocket that fits into the tracks." width="300">
+    <img src="/assets/images/PatchworkSecondPrint.png" alt="20% of Patchwork's Hull successfully 3D printed along with a single suspension unit." width="300">
+    <p>
+        It took another week to complete the long prints that would complete half of the robot chassis! 
+        If you have an attentive eye, you might notice that I updated the drive sprocket to be much larger.
+    </p>
+    <img src="/assets/images/Patchwork_Half_No_Tracks.png" alt="Patchwork 3D-modelled in Onshape." width="300">
+    <p>
+        At this point, I had run out of the 3D print filament that I had initially purchased, so it was back to the Elegoo shop to purchase more . . . 
+        Only I don’t exactly have an eye for colour, so the new 3D print filament turned out to be a slightly different shade of grey . . . 
+        And I had already purchased 3 kilograms of the new filament.
+    </p>
+    <img src="/assets/images/PatchworkTrackSegment.png" alt="A section of Patchwork's tracks, with a portion in dark grey and another portion in light grey." width="300">
+    <p>
+        However, this turned out to be exactly the inspiration I needed to get a name for the robot. 
+        Thus, from henceforth, I referred to the robot by the name “Patchwork.” 
+        With the name out of the way, I finally printed all of the track links for half of Patchwork. 
+        The track links really test your endurance as a creator - each is an individual part you have to print and you have to cut and insert pins in each one individually. 
+        There are a total of 127 track links for each side of Patchwork, so 254 in total.
+    </p>
+    <img src="/assets/images/HalfPatchwork1.png" alt="50% of Patchwork 3D printed with tracks attached" width="300">
+    <p>
+        By this point, things got a bit chaotic: I realised a number of places in the first half of the robot that needed slight adjustments – from the motor holders being too small to the drive sprocket still not having enough teeth to the metal rods not having enough of a grip to prevent wiggling. 
+        I went back to Onshape and re-designed so many parts so that when I got to printing the second half, they wouldn’t have these flaws, but I still needed to do something with the first half . . . 
+        And that’s where my good friend Epoxy comes into play! It might not be the most “professional” but it’ll get the job done for most small fixes! 
+        Anyway, as a result of all of those slight mess-ups, I got into the process of “Test this component in the first half before 3D printing the second half.” 
+        Thus, my printing slowed down, but hopefully, there would be much fewer failed 3D prints.
+    </p>
+    </br>
+    <p>
+        By the 6th week of working on the project and assembling things, I finally had a fully functioning track tensioner and about 80% of Patchwork printed! 
+        However, when I went to actually test the motors, they fell short. 
+        There was just too much friction in my design and my motors weren’t powerful enough to move the tracks all on their own. 
+        So, I had to redesign things: The main problem was that I was using bevel gears to redirect the torque of the motors. 
+        While bevel gears should be the most efficient solution, something I missed during my initial research was that they’re only efficient if you have industrial level-precision: 
+        if they’re slightly misaligned by even a millimetre, they produce tons of friction.
+    </p>
+    </br>
+    <p>
+        Thus, I reminded myself of a central doctrine of engineering: don’t make anything more complicated than it has to be. 
+        So, I made it so that the motors directly rotate the axle connected to the drive sprocket instead of anything super complicated, and then added ball bearings to reduce friction. 
+        With this redesign, a 50 RPM motor did the trick and let the tracks move and I could finally finish printing the entire chassis for Patchwork.
+    </p>
+    <img src="/assets/images/FullPatchwork1.png" alt="Patchwork 3D printed in its entirety viewed from above." width="300">
+    <img src="/assets/images/FullPatchwork2.png" alt="Patchwork 3D printed in its entirety viewed from the side, with a closer focus on the suspension and track mechanisms." width="300">
+    <p>
+        In the meantime, I also realised that bolts and nuts were coming loose when pushing Patchwork around, and the suspension was falling apart, so I replaced the regular nuts with sturdier nyloc nuts and redesigned the suspension to be far more durable. 
+        You can see the old vs new suspension below!
+    </p>
+    <img src="/assets/images/OldSuspension.png" alt="The older suspension with very thin walls." width="300">
+    <img src="/assets/images/ImprovedSuspension.png" alt="A newer suspension with more rounded corners and thick walls" width="300">
+    <p>
+        I also tried cutting the metal rods attaching the wheels to the chassis so they wouldn’t take up obnoxious amounts of horizontal space, but the hacksaw I purchased had more teeth per inch than ideal, and I didn’t have access to cutting lubricant, so even cutting two rods turned out to be way harder than I thought it would be. 
+        However, with some combination of being determined and headstrong, I managed to get a setup working by using dish soap as makeshift cutting lubricant! 
+        With all of the rods cut to an appropriate length, the suspension system now works!
+    </p>
+    <iframe title="Patchwork's Working Suspension." src="https://www.youtube.com/embed/_ygqgzpJUxU"></iframe>
+    <p>
+        Now, it was time to move on to the electronics. 
+        Usually I really struggle with the electronics and it takes up most of my time, but for Patchwork, everything went surprisingly smoothly? 
+        The batteries worked as anticipated and the RC controllers had very intuitive wiring and coding. 
+        Apart from me realising my initial Arduino Uno board had broken pins and then also having to realise that some of my wires were dysfunctional, getting Patchwork to move via remote controls was relatively easy!
+    </p>
+    <iframe title="Patchwork Driving slowly." src="https://www.youtube.com/embed/d8P59KCy1wk"></iframe>
+    <p>
+        From here, all it took was me ordering some faster motors and installing them into Patchwork!
+        After that, Patchwork was zooming around like crazy! 
+        Hooray!
+    </p>
+    <iframe title="Patchwork Driving quickly." src="https://www.youtube.com/embed/TQ48zr0UskY"></iframe>
+    {% include "noCSS-site-footer.html" %}
+</body>
+</html>
