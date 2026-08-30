@@ -7,6 +7,7 @@ title: Robotics Projects
     {% include "global-head-code.html"%}
     <link rel="stylesheet" href="/css/globalLessCSS.css"/>
     <link rel="stylesheet" href="/css/table.css"/>
+    <link rel="stylesheet" href="/css/carousel.css"/>
     <script>
     if (localStorage.getItem('preferredCSSMode') === 'modernCSS') {
       window.location.replace('/../../modernCSS/Projects/robotics_projects');
@@ -21,6 +22,7 @@ title: Robotics Projects
         {% lessCSSBackButton "/../lessCSS/Projects/projects", "Go back to Projects Homepage" %}
     </div>
     <div class="default_content"> <h1>{{title}}</h1></div>
+    {% include "robotics_projects/patchwork_lessCSS.html" %}
     {% include "robotics_projects/human_pointer.html" %}
     {% include "robotics_projects/eraser_holder.html" %}
     {% include "lessCSS-site-footer.html" %}

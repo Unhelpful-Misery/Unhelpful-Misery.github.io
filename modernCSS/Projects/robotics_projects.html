@@ -7,6 +7,7 @@ title: Robotics Projects
     {% include "global-head-code.html"%}
     <link rel="stylesheet" href="/css/global.css"/>
     <link rel="stylesheet" href="/css/table.css"/>
+    <link rel="stylesheet" href="/css/carousel.css">
 
     <div style="outline:none">
         <a href="/../../lessCSS/Projects/robotics_projects" onclick="goToAccessibilityWebsite()" id="accessibilityWebsiteButton" class="page__content-skip-link">Go to accessible version of website</a>
@@ -33,6 +34,7 @@ title: Robotics Projects
 </head>
 <body>
     <div class="top_content" id="main-content" tabindex="-1"> <h1>{{title}}</h1></div>
+    {% include "robotics_projects/patchwork.html" %}
     {% include "robotics_projects/human_pointer.html" %}
     {% include "robotics_projects/eraser_holder.html" %}
     {% include "go-home-button.html"%}
